@@ -4,16 +4,62 @@
     <br> <br>
     <div class="row">
       <div class="img-container">
-        <img src="https://picsum.photos/200"/>
+        <img src="https://picsum.photos/200">
       </div>
-        <carousel>
-          <slide class="slide-container">
-            Transportation Costs of Attending College
-          </slide>
-          <slide class="slide-container">
-            Slide 2
-          </slide>
-        </carousel>
+      <carousel>
+        <slide class="slide-container">
+          Transportation Costs of Attending College
+        </slide>
+        <slide class="slide-container">
+          Slide 2
+        </slide>
+        <slide class="slide-container">
+          Slide 3
+        </slide>
+        <slide class="slide-container">
+          Slide 4
+        </slide>
+      </carousel>
+    </div>
+
+    <div class="row">
+      <div class="img-container">
+        <img src="https://picsum.photos/200">
+      </div>
+      <carousel>
+        <slide class="slide-container">
+          Transportation Costs of Attending College
+        </slide>
+        <slide class="slide-container">
+          Slide 2
+        </slide>
+        <slide class="slide-container">
+          Slide 3
+        </slide>
+        <slide class="slide-container">
+          Slide 4
+        </slide>
+      </carousel>
+    </div>
+
+    <div class="row">
+      <div class="img-container">
+        <img src="https://picsum.photos/200">
+      </div>
+      <carousel>
+        <slide class="slide-container">
+          Transportation Costs of Attending College
+        </slide>
+        <slide class="slide-container">
+          Slide 2
+        </slide>
+        <slide class="slide-container">
+          Slide 3
+        </slide>
+        <slide class="slide-container">
+          Slide 4
+        </slide>
+      </carousel>
     </div>
   </div>
 </template>
@@ -57,12 +103,15 @@ export default {
 
 .row{
   display: flex;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .slide-container{
   border-top: 8px $green solid;
   font-weight: 600;
   margin: 0 2rem 0 2rem;
+  max-width: 50%;
+  cursor: pointer;
 }
 
 </style>
