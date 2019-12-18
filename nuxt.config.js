@@ -68,6 +68,10 @@ export default {
     {
       src: '~plugins/vue-observable.js',
       ssr: false
+    },
+    {
+      src: '~plugins/vue-carousel.js',
+      ssr: false
     }
   ],
   /*
