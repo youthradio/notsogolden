@@ -7,7 +7,7 @@
       <div class="img-container">
         <img src="https://picsum.photos/200">
       </div>
-      <carousel class="slide-parent">
+      <carousel :perPageCustom="[[480, 1], [768, 3]]" :scrollPerPage="true" class="slide-parent">
         <slide class="slide-container">
           Transportation Costs of Attending College
         </slide>
@@ -107,6 +107,8 @@ export default {
 
 .container {
   padding: 0 0 0 1rem;
+  width: 100%;
+
 }
 
 .slide-parent{
