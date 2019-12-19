@@ -1,23 +1,24 @@
 <template>
   <div class="container">
-    <HeaderContainer />
-    <br> <br>
+    <h1 class="title">
+      Getting by in California
+    </h1>
     <div class="row">
       <div class="img-container">
         <img src="https://picsum.photos/200">
       </div>
-      <carousel>
+      <carousel class="slide-parent">
         <slide class="slide-container">
           Transportation Costs of Attending College
         </slide>
         <slide class="slide-container">
-          Slide 2
+          Homeless Community College Students
         </slide>
         <slide class="slide-container">
-          Slide 3
+          Rising Tuition Costs
         </slide>
         <slide class="slide-container">
-          Slide 4
+          Tuition Costs (graphic)
         </slide>
       </carousel>
     </div>
@@ -67,11 +68,9 @@
 <script>
 import CommonUtils from '../mixins/CommonUtils'
 import ArticleData from '../data/data.json'
-import HeaderContainer from '~/components/Header/HeaderContainer'
 
 export default {
   components: {
-    HeaderContainer
   },
   mixins: [
     CommonUtils
@@ -103,14 +102,29 @@ export default {
 
 .row{
   display: flex;
-  margin: 0 1rem 1rem 1rem;
+  margin: 0 0 1rem 0rem;
+}
+
+.container {
+  padding: 0 0 0 1rem;
+}
+
+.slide-parent{
+}
+
+.title{
+  font-family: $baseFont;
+  font-size: 3rem;
+}
+
+.img-container{
+  border-top: 8px $green solid;
 }
 
 .slide-container{
   border-top: 8px $green solid;
   font-weight: 600;
   margin: 0 2rem 0 2rem;
-  max-width: 50%;
   cursor: pointer;
 }
 
