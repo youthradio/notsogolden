@@ -7,7 +7,7 @@
       <div class="img-container">
         <img src="https://picsum.photos/200">
       </div>
-      <carousel :perPageCustom="[[480, 1], [768, 3]]" :scrollPerPage="true" class="slide-parent">
+      <carousel :perPageCustom="[[280, 1], [768, 3]]" :scrollPerPage="true" class="slide-parent">
         <slide class="slide-container">
           Transportation Costs of Attending College
         </slide>
@@ -19,46 +19,6 @@
         </slide>
         <slide class="slide-container">
           Tuition Costs (graphic)
-        </slide>
-      </carousel>
-    </div>
-
-    <div class="row">
-      <div class="img-container">
-        <img src="https://picsum.photos/200">
-      </div>
-      <carousel>
-        <slide class="slide-container">
-          Transportation Costs of Attending College
-        </slide>
-        <slide class="slide-container">
-          Slide 2
-        </slide>
-        <slide class="slide-container">
-          Slide 3
-        </slide>
-        <slide class="slide-container">
-          Slide 4
-        </slide>
-      </carousel>
-    </div>
-
-    <div class="row">
-      <div class="img-container">
-        <img src="https://picsum.photos/200">
-      </div>
-      <carousel>
-        <slide class="slide-container">
-          Transportation Costs of Attending College
-        </slide>
-        <slide class="slide-container">
-          Slide 2
-        </slide>
-        <slide class="slide-container">
-          Slide 3
-        </slide>
-        <slide class="slide-container">
-          Slide 4
         </slide>
       </carousel>
     </div>
@@ -99,19 +59,22 @@ export default {
 <style lang="scss" scoped>
 @import "~@/css/vars";
 @import "~@/css/base";
+@import "~@/css/mixins";
 
 .row{
   display: flex;
   margin: 0 0 1rem 0rem;
+  width: 100%;
 }
 
 .container {
   padding: 0 0 0 1rem;
   width: 100%;
-
 }
 
 .slide-parent{
+  width: 50%;
+  margin: 0 1.0rem 0 0.0rem;
 }
 
 .title{
@@ -121,13 +84,20 @@ export default {
 
 .img-container{
   border-top: 8px $green solid;
+  img{
+  position: relative;
+  width: 100%;
+  }
 }
 
 .slide-container{
   border-top: 8px $green solid;
   font-weight: 600;
-  margin: 0 2rem 0 2rem;
+  padding: 0 1rem 0 0rem;
+  margin: 0 0.0rem 0 0.5rem;
   cursor: pointer;
+    @include breakpoint(medium){
+    }
 }
 
 </style>
