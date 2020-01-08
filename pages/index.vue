@@ -3,25 +3,6 @@
     <h1 class="title">
       Getting by in California
     </h1>
-    <div class="row">
-      <div class="img-container">
-        <img src="https://picsum.photos/200">
-      </div>
-      <div>
-        <slide class="slide-container">
-          Transportation Costs of Attending College
-        </slide>
-        <slide class="slide-container">
-          Homeless Community College Students
-        </slide>
-        <slide class="slide-container">
-          Rising Tuition Costs
-        </slide>
-        <slide class="slide-container">
-          Tuition Costs (graphic)
-        </slide>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -79,6 +60,9 @@ export default {
     width: 100%;
     }
 }
+.slide-content {
+  max-width: 3rem;
+}
 
 .title{
   font-family: $baseFont;
@@ -89,18 +73,23 @@ export default {
   border-top: 8px $green solid;
   img{
   position: relative;
-  width: 100%;
+  width: 7rem;
   }
 }
 
 .slide-container{
+  display: inline-block;
   border-top: 8px $green solid;
   font-weight: 600;
   padding: 0 1rem 0 0rem;
-  margin: 0 0.0rem 0 0.5rem;
+  margin: 0 0.0rem 3rem 0.5rem;
+  white-space: nowrap;
   cursor: pointer;
     @include breakpoint(medium){
     }
 }
-
+/*
+.slide-container:nth-last-child(3){
+    margin-top: 1rem;
+}*/
 </style>
