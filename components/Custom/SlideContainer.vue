@@ -34,6 +34,23 @@ export default {
   },
   mixins: [
   ],
+  props: {
+    slidePictureURL: {
+      type: String,
+      require: true,
+      default: null
+    },
+    slideTitle: {
+      type: String,
+      require: true,
+      default: null
+    },
+    slideURL: {
+      type: String,
+      require: true,
+      default: null
+    }
+  },
   data () {
     return {
     }
