@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="img-container slide-container">
-      <img :src="slidePictureURL">
+      <img src="https://picsum.photos/400">
     </div>
     <div class="slide-container">
       <p class="slide-content">
