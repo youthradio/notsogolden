@@ -23,7 +23,7 @@ export default function fetchData () {
     console.log('DATTT___-->', dataToWrite)
     if (dataToWrite) {
       const fetcher = []
-      const basePath = `data/`
+      const basePath = 'data/'
       if (!fs.pathExistsSync(basePath)) { fs.emptyDir(basePath) }
       const fileName = `${basePath}data.json`
       console.log(`PROCESSING ${fileName}...`)

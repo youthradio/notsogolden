@@ -66,24 +66,24 @@ export default {
 @import "~@/css/vars";
 @import "~@/css/base";
 @import "~@/css/mixins";
-.img-fluid{
+.img-fluid {
   width: 100%;
   height: auto;
 }
-.row{
+.row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  @include breakpoint(medium){
-    }
+  @include breakpoint(medium) {
+  }
 }
 
 .container {
   padding: 0 0 0 1rem;
   width: 100%;
 }
-.title{
+.title {
   font-family: $baseFont;
   font-size: 3rem;
 }
@@ -92,27 +92,27 @@ export default {
   border-top: 8px $green solid;
   max-width: 9rem;
   margin-top: 1rem;
-  @include breakpoint(medium){
-        margin: 0 1rem 0 1rem;
-    }
+  @include breakpoint(medium) {
+    margin: 0 1rem 0 1rem;
+  }
 }
 
-.slide-container{
+.slide-container {
   display: inline-block;
   font-weight: 600;
   width: 50%;
-    @include breakpoint(medium){
-        width: 25%
-    }
+  @include breakpoint(medium) {
+    width: 25%;
+  }
 }
-.slide-container:nth-last-child(1){
+.slide-container:nth-last-child(1) {
 }
-.blank-block{
-    border: none;
-    display: none;
-    @include breakpoint(medium){
-        display: inline;
-    }
+.blank-block {
+  border: none;
+  display: none;
+  @include breakpoint(medium) {
+    display: inline;
+  }
 }
 /*
 .slide-container:nth-last-child(3){

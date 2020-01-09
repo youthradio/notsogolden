@@ -90,6 +90,7 @@ export async function customFetcher () {
     const data = await goot.parse.archie(DOC_ID)
     convertedData = markdown2html(data)
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log('Error fetching data', e)
   }
 

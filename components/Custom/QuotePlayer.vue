@@ -67,13 +67,13 @@ export default {
     fadeStyle () {
       if (!this.isSoundPlaying) {
         return {
-          transform: `scale(0.9)`,
+          transform: 'scale(0.9)',
           opacity: '0.05'
         }
       }
       return {
         opacity: '0.99',
-        transform: `scale(1)`
+        transform: 'scale(1)'
         // textShadow: '0px 0px 20px darkgray'
       }
     },
