@@ -35,6 +35,10 @@ export default {
       default: null
     }
   },
+  asyncData (ctx) {
+    return {
+    }
+  },
   data () {
     return {
     }
@@ -50,10 +54,6 @@ export default {
     }
   },
   watch: {
-  },
-  asyncData (ctx) {
-    return {
-    }
   },
   mounted () {
   },
