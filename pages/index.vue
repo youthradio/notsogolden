@@ -3,7 +3,7 @@
     <h1 class="title">
       Getting by in California
     </h1>
-    <SlideContainer />
+    <SlideContainer slide-title="Test" />
   </div>
 </template>
 

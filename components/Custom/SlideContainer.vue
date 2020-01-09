@@ -1,27 +1,27 @@
 <template>
   <div class="row">
     <div class="img-container slide-container">
-      <img src="https://picsum.photos/200">
+      <img :src="slidePictureURL">
     </div>
     <div class="slide-container">
       <p class="slide-content">
-        Transportation Costs of Attending College
+        {{ slideTitle }}
       </p>
     </div>
     <div class="slide-container">
       <p class="slide-content">
-        Homeless Community College Students
+        {{ slideTitle }}
       </p>
     </div>
     <div class="slide-container">
       <p class="slide-content">
-        Rising Tuition Costs
+        {{ slideTitle }}
       </p>
     </div>
     <div class="blank-block slide-container" />
     <div class="slide-container">
       <p class="slide-content">
-        Tuition Costs (graphic)
+        {{ slideTitle }}
       </p>
     </div>
   </div>
