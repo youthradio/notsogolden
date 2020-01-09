@@ -111,6 +111,7 @@ export default {
   margin: 0 0.0rem 4rem 0.5rem;
   width: 8rem;
     @include breakpoint(medium){
+        margin: 0 0.0rem 0rem 0.5rem;
     }
 }
 .slide-container:nth-last-child(1){
