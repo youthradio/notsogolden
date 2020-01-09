@@ -2,8 +2,8 @@
   <div class="row">
     <div class="slide-container">
       <img
-        class="img-fluid"
         :style="borderColor"
+        class="img-fluid"
         src="https://picsum.photos/400"
       >
     </div>
@@ -13,8 +13,8 @@
       class="slide-container"
     >
       <p
-        class="slide-content"
         :style="borderColor"
+        class="slide-content"
       >
         {{ topic.title }}
       </p>
@@ -35,10 +35,6 @@ export default {
       default: null
     }
   },
-  asyncData (ctx) {
-    return {
-    }
-  },
   data () {
     return {
     }
@@ -54,6 +50,10 @@ export default {
     }
   },
   watch: {
+  },
+  asyncData (ctx) {
+    return {
+    }
   },
   mounted () {
   },
