@@ -1,27 +1,22 @@
 <template>
   <div class="row">
-    <div class="img-container slide-container">
-      <img class="slide-content" src="https://picsum.photos/400">
-    </div>
     <div class="slide-container">
-      <p class="slide-content">
-        <a href="">{{ slideTitle }}</a>
-      </p>
+      <img
+        :style="borderColor"
+        class="img-fluid"
+        src="https://picsum.photos/400"
+      >
     </div>
-    <div class="slide-container">
-      <p class="slide-content">
-        <a href="">{{ slideTitle }}</a>
-      </p>
-    </div>
-    <div class="slide-container">
-      <p class="slide-content">
-        <a href="">{{ slideTitle }}</a>
-      </p>
-    </div>
-    <div class="blank-block slide-container" />
-    <div class="slide-container">
-      <p class="slide-content">
-        <a href="">{{ slideTitle }}</a>
+    <div
+      v-for="topic in slideContent.topics"
+      :key="topic.title"
+      class="slide-container"
+    >
+      <p
+        :style="borderColor"
+        class="slide-content"
+      >
+        {{ topic.title }}
       </p>
     </div>
   </div>
@@ -34,18 +29,8 @@ export default {
   mixins: [
   ],
   props: {
-    slidePictureURL: {
-      type: String,
-      require: true,
-      default: null
-    },
-    slideTitle: {
-      type: String,
-      require: true,
-      default: null
-    },
-    slideURL: {
-      type: String,
+    slideContent: {
+      type: Object,
       require: true,
       default: null
     }
@@ -54,7 +39,16 @@ export default {
     return {
     }
   },
-  computed: {},
+  computed: {
+    borderColor () {
+      if (this.slideContent) {
+        return {
+          'border-top-color': this.slideContent.color
+        }
+      }
+      return ''
+    }
+  },
   watch: {
   },
   asyncData (ctx) {
@@ -72,7 +66,10 @@ export default {
 @import "~@/css/vars";
 @import "~@/css/base";
 @import "~@/css/mixins";
-
+.img-fluid{
+  width: 100%;
+  height: auto;
+}
 .row{
   display: flex;
   flex-direction: row;
@@ -89,14 +86,6 @@ export default {
 .title{
   font-family: $baseFont;
   font-size: 3rem;
-}
-
-.img-container{
-  img{
-  position: relative;
-  width: 9rem;
-  float: left;
-  }
 }
 
 .slide-content {
