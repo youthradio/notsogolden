@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="img-container slide-container">
-      <img src="https://picsum.photos/400">
+      <img class="slide-content" src="https://picsum.photos/400">
     </div>
     <div class="slide-container">
       <p class="slide-content">
@@ -79,7 +79,6 @@ export default {
   flex-wrap: wrap;
   align-items: flex-start;
   @include breakpoint(medium){
-        max-width: 40rem;
     }
 }
 
@@ -95,23 +94,26 @@ export default {
 .img-container{
   img{
   position: relative;
-  width: inherit;
+  width: 9rem;
   float: left;
   }
 }
 
 .slide-content {
+  border-top: 8px $green solid;
+  max-width: 9rem;
+  margin-top: 1rem;
+  @include breakpoint(medium){
+        margin: 0 1rem 0 1rem;
+    }
 }
 
 .slide-container{
   display: inline-block;
-  border-top: 8px $green solid;
   font-weight: 600;
-  padding: 0 1rem 0 0rem;
-  margin: 0 0.0rem 4rem 0.5rem;
-  width: 8rem;
+  width: 50%;
     @include breakpoint(medium){
-        margin: 0 0.0rem 0rem 0.5rem;
+        width: 25%
     }
 }
 .slide-container:nth-last-child(1){
