@@ -5,23 +5,23 @@
     </div>
     <div class="slide-container">
       <p class="slide-content">
-        {{ slideTitle }}
+        <a href="">{{ slideTitle }}</a>
       </p>
     </div>
     <div class="slide-container">
       <p class="slide-content">
-        {{ slideTitle }}
+        <a href="">{{ slideTitle }}</a>
       </p>
     </div>
     <div class="slide-container">
       <p class="slide-content">
-        {{ slideTitle }}
+        <a href="">{{ slideTitle }}</a>
       </p>
     </div>
     <div class="blank-block slide-container" />
     <div class="slide-container">
       <p class="slide-content">
-        {{ slideTitle }}
+        <a href="">{{ slideTitle }}</a>
       </p>
     </div>
   </div>
