@@ -4,7 +4,7 @@
       <img
         :style="borderColor"
         class="img-fluid"
-        src="https://picsum.photos/400"
+        :src="`${slideContent.featureImage}`"
       >
     </div>
     <div
