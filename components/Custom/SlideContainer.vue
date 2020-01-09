@@ -1,27 +1,22 @@
 <template>
   <div class="row">
-    <div class="img-container slide-container">
-      <img class="slide-content" src="https://picsum.photos/400">
-    </div>
     <div class="slide-container">
-      <p class="slide-content">
-        {{ slideTitle }}
-      </p>
+      <img
+        class="img-fluid"
+        :style="borderColor"
+        src="https://picsum.photos/400"
+      >
     </div>
-    <div class="slide-container">
-      <p class="slide-content">
-        {{ slideTitle }}
-      </p>
-    </div>
-    <div class="slide-container">
-      <p class="slide-content">
-        {{ slideTitle }}
-      </p>
-    </div>
-    <div class="blank-block slide-container" />
-    <div class="slide-container">
-      <p class="slide-content">
-        {{ slideTitle }}
+    <div
+      v-for="topic in slideContent.topics"
+      :key="topic.title"
+      class="slide-container"
+    >
+      <p
+        class="slide-content"
+        :style="borderColor"
+      >
+        {{ topic.title }}
       </p>
     </div>
   </div>
@@ -34,32 +29,31 @@ export default {
   mixins: [
   ],
   props: {
-    slidePictureURL: {
-      type: String,
+    slideContent: {
+      type: Object,
       require: true,
       default: null
-    },
-    slideTitle: {
-      type: String,
-      require: true,
-      default: null
-    },
-    slideURL: {
-      type: String,
-      require: true,
-      default: null
+    }
+  },
+  asyncData (ctx) {
+    return {
     }
   },
   data () {
     return {
     }
   },
-  computed: {},
-  watch: {
-  },
-  asyncData (ctx) {
-    return {
+  computed: {
+    borderColor () {
+      if (this.slideContent) {
+        return {
+          'border-top-color': this.slideContent.color
+        }
+      }
+      return ''
     }
+  },
+  watch: {
   },
   mounted () {
   },
@@ -72,7 +66,10 @@ export default {
 @import "~@/css/vars";
 @import "~@/css/base";
 @import "~@/css/mixins";
-
+.img-fluid{
+  width: 100%;
+  height: auto;
+}
 .row{
   display: flex;
   flex-direction: row;
@@ -89,14 +86,6 @@ export default {
 .title{
   font-family: $baseFont;
   font-size: 3rem;
-}
-
-.img-container{
-  img{
-  position: relative;
-  width: 9rem;
-  float: left;
-  }
 }
 
 .slide-content {

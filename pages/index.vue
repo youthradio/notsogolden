@@ -3,7 +3,11 @@
     <h1 class="title">
       Getting by in California
     </h1>
-    <SlideContainer slide-title="Big title test right now blah" />
+    <SlideContainer
+      v-for="theme in articleData.themes"
+      :key="theme.title"
+      :slide-content="theme"
+    />
   </div>
 </template>
 
@@ -19,6 +23,11 @@ export default {
   mixins: [
     CommonUtils
   ],
+  asyncData (ctx) {
+    return {
+      articleData: ArticleData.content
+    }
+  },
   data () {
     return {
     }
@@ -26,11 +35,6 @@ export default {
   computed: {},
   watch: {
 
-  },
-  asyncData (ctx) {
-    return {
-      articleData: ArticleData.content
-    }
   },
   mounted () {
   },
