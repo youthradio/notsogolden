@@ -3,7 +3,7 @@
     <div class="slide-container">
       <img
         :style="borderColor"
-        class="img-fluid"
+        class="img-fluid slide-img"
         src="https://picsum.photos/400"
       >
     </div>
@@ -70,6 +70,9 @@ export default {
   width: 100%;
   height: auto;
 }
+.slide-img{
+  border-top: 8px solid;
+}
 .row {
   display: flex;
   flex-direction: row;
@@ -78,7 +81,7 @@ export default {
   @include breakpoint(medium) {
   }
 }
-
+//i
 .container {
   padding: 0 0 0 1rem;
   width: 100%;
@@ -87,7 +90,6 @@ export default {
   font-family: $baseFont;
   font-size: 3rem;
 }
-
 .slide-content {
   border-top: 8px $green solid;
   max-width: 9rem;

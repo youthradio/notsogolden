@@ -3,7 +3,6 @@
     "vetur.format.defaultFormatter.html": "js-beautify-html",
     "vetur.format.defaultFormatter.css": "prettier",
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-    "eslint.autoFixOnSave": true,
     "eslint.validate": [
       {
         "language": "vue",
@@ -20,5 +19,7 @@
     ],
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
-    }
+    },
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false
   }
