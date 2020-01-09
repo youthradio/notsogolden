@@ -46,7 +46,7 @@ export default {
 @import "~@/css/mixins";
 
 .container {
-  padding: 0 0 0 1rem;
+  padding: 0 0 0 0.2rem;
   width: 100%;
 }
 .title{
