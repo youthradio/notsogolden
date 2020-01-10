@@ -18,6 +18,7 @@
       >
         {{ topic.title }}
       </p>
+      <img :src="`icon/${topic.format.trim()}.svg`" class="ico-fluid">
     </div>
   </div>
 </template>
@@ -69,6 +70,10 @@ export default {
 .img-fluid {
   width: 100%;
   height: auto;
+}
+.ico-fluid{
+  max-height: 50px;
+  max-width: 50px;
 }
 .grid-container {
   display: grid;
