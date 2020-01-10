@@ -1,6 +1,6 @@
 <template>
-  <div class="row">
-    <div class="slide-container">
+  <div class="grid-container">
+    <div class="grid-image">
       <img
         :style="borderColor"
         class="img-fluid"
@@ -10,7 +10,7 @@
     <div
       v-for="topic in slideContent.topics"
       :key="topic.title"
-      class="slide-container"
+      class="grid-topic"
     >
       <p
         :style="borderColor"
@@ -18,6 +18,7 @@
       >
         {{ topic.title }}
       </p>
+      <img :src="`icon/${topic.format.trim()}.svg`" class="ico-fluid">
     </div>
   </div>
 </template>
@@ -70,6 +71,7 @@ export default {
   width: 100%;
   height: auto;
 }
+<<<<<<< HEAD
 .slide-img{
   border-top: 8px solid;
 }
@@ -78,13 +80,33 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
+=======
+.ico-fluid{
+  max-height: 50px;
+  max-width: 50px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+
+>>>>>>> 4dd6cc826e9c0fe7816b0393587a74682e8e1a70
   @include breakpoint(medium) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
   }
 }
+<<<<<<< HEAD
 //i
 .container {
   padding: 0 0 0 1rem;
   width: 100%;
+=======
+@include breakpoint(medium) {
+  .grid-topic:nth-child(5) {
+    grid-column-start: 2;
+  }
+>>>>>>> 4dd6cc826e9c0fe7816b0393587a74682e8e1a70
 }
 .title {
   font-family: $baseFont;
@@ -98,26 +120,4 @@ export default {
     margin: 0 1rem 0 1rem;
   }
 }
-
-.slide-container {
-  display: inline-block;
-  font-weight: 600;
-  width: 50%;
-  @include breakpoint(medium) {
-    width: 25%;
-  }
-}
-.slide-container:nth-last-child(1) {
-}
-.blank-block {
-  border: none;
-  display: none;
-  @include breakpoint(medium) {
-    display: inline;
-  }
-}
-/*
-.slide-container:nth-last-child(3){
-    margin-top: 1rem;
-}*/
 </style>
