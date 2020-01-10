@@ -3,8 +3,8 @@
     <div class="slide-container">
       <img
         :style="borderColor"
-        class="img-fluid slide-img"
-        src="https://picsum.photos/400"
+        class="img-fluid"
+        :src="`${slideContent.featureImage}`"
       >
     </div>
     <div
