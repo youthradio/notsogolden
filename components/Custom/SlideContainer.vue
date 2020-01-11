@@ -17,8 +17,10 @@
         class="slide-content"
       >
         {{ topic.title }}
+      </p><div class="svg-container">
+        <img :src="`icon/${topic.format.trim()}.svg`" class="ico-fluid">
+      </div>
       </p>
-      <img :src="`icon/${topic.format.trim()}.svg`" class="ico-fluid">
     </div>
   </div>
 </template>
@@ -71,16 +73,6 @@ export default {
   width: 100%;
   height: auto;
 }
-<<<<<<< HEAD
-.slide-img{
-  border-top: 8px solid;
-}
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-=======
 .ico-fluid{
   max-height: 50px;
   max-width: 50px;
@@ -90,23 +82,15 @@ export default {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
 
->>>>>>> 4dd6cc826e9c0fe7816b0393587a74682e8e1a70
   @include breakpoint(medium) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
   }
 }
-<<<<<<< HEAD
-//i
-.container {
-  padding: 0 0 0 1rem;
-  width: 100%;
-=======
 @include breakpoint(medium) {
   .grid-topic:nth-child(5) {
     grid-column-start: 2;
   }
->>>>>>> 4dd6cc826e9c0fe7816b0393587a74682e8e1a70
 }
 .title {
   font-family: $baseFont;
@@ -116,6 +100,13 @@ export default {
   border-top: 8px $green solid;
   max-width: 9rem;
   margin-top: 1rem;
+  @include breakpoint(medium) {
+    margin: 0 1rem 0 1rem;
+  }
+}
+
+.svg-container{
+  margin: -1rem 0rem -1rem 0rem;
   @include breakpoint(medium) {
     margin: 0 1rem 0 1rem;
   }
