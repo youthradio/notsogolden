@@ -18,7 +18,7 @@
       >
         {{ topic.title }}
       </p><div class="svg-container">
-        <img :src="`icon/${topic.format.trim()}.svg`" class="ico-fluid">
+        <a :style="borderColorLink" href=""><img :src="`icon/${topic.format.trim()}.svg`" class="ico-fluid"></a>
       </div>
       </p>
     </div>
@@ -51,6 +51,14 @@ export default {
       if (this.slideContent) {
         return {
           'border-top-color': this.slideContent.color
+        }
+      }
+      return ''
+    },
+    borderColorLink () {
+      if (this.slideContent) {
+        return {
+          'border-bottom-color': this.slideContent.color
         }
       }
       return ''
@@ -108,13 +116,14 @@ export default {
   border-top: 8px $green solid;
   max-width: 9rem;
   margin-top: 1rem;
+  font-weight: 600;
   @include breakpoint(medium) {
     margin: 0 1rem 0 1rem;
   }
 }
 
 .svg-container{
-  margin: -1rem 0rem -1rem 0rem;
+  margin: -1.1rem 0rem 0rem 0rem;
   @include breakpoint(medium) {
     margin: 0 1rem 0 1rem;
   }
