@@ -3,7 +3,7 @@
     <div class="grid-image">
       <img
         :style="borderColor"
-        class="img-fluid"
+        class="img-fluid img-slide"
         :src="`${slideContent.featureImage}`"
       >
     </div>
@@ -70,13 +70,14 @@ export default {
 @import "~@/css/base";
 @import "~@/css/mixins";
 .img-fluid {
-  width: 100%;
+  width: 90%;
   height: auto;
 }
 .ico-fluid{
   max-height: 50px;
   max-width: 50px;
 }
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -95,6 +96,13 @@ export default {
 .title {
   font-family: $baseFont;
   font-size: 3rem;
+}
+.img-slide{
+  border-top: 8px $green solid;
+  margin-top: 1rem;
+  @include breakpoint(medium) {
+    margin: 0 1rem 0 1rem;
+  }
 }
 .slide-content {
   border-top: 8px $green solid;
