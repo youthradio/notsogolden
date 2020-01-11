@@ -59,6 +59,7 @@ export default {
       if (this.slideContent) {
         return {
           'border-bottom-color': this.slideContent.color
+          // needs a hover rule too, not sure how to do it through here
         }
       }
       return ''
