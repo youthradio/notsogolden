@@ -1,6 +1,6 @@
 export default {
-  baseURL: '/static-nuxt-template',
-  title: 'Static Template Title',
+  baseURL: '/gbic-project',
+  title: 'Not So Golden: Struggles Facing California’s Young Adults',
   author: 'Static Author',
   publishDate: 'Oct. 2, 2019',
   location: 'Oakland, CA',
