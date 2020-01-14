@@ -56,6 +56,7 @@ export default {
   ** Global CSS
   */
   css: [
+    'plyr/dist/plyr.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -67,6 +68,10 @@ export default {
     },
     {
       src: '~plugins/vue-observable.js',
+      ssr: false
+    },
+    {
+      src: '~/plugins/vue-plyr.js',
       ssr: false
     }
   ],
