@@ -10,6 +10,7 @@
       @onTopicChange="onTopicChange"
     />
     <OverlayContent
+      ref="overlay"
       :topic="activeTopic"
       @closeOverlay="closeOverlay"
     />
@@ -52,6 +53,7 @@ export default {
     },
     onTopicChange (topic) {
       this.activeTopic = topic
+      this.$refs.overlay.setState(true)
     }
   }
 }
