@@ -7,6 +7,11 @@
       v-for="theme in articleData.themes"
       :key="theme.title"
       :slide-content="theme"
+      @onTopicChange="onTopicChange"
+    />
+    <OverlayContent
+      :topic="activeTopic"
+      @closeOverlay="closeOverlay"
     />
   </div>
 </template>
@@ -15,10 +20,12 @@
 import CommonUtils from '../mixins/CommonUtils'
 import ArticleData from '../data/data.json'
 import SlideContainer from '../components/Custom/SlideContainer'
+import OverlayContent from '../components/Custom/OverlayContent'
 
 export default {
   components: {
-    SlideContainer
+    SlideContainer,
+    OverlayContent
   },
   mixins: [
     CommonUtils
@@ -30,6 +37,7 @@ export default {
   },
   data () {
     return {
+      activeTopic: null
     }
   },
   computed: {},
@@ -39,7 +47,12 @@ export default {
   mounted () {
   },
   methods: {
-
+    closeOverlay () {
+      this.activeTopic = null
+    },
+    onTopicChange (topic) {
+      this.activeTopic = topic
+    }
   }
 }
 </script>

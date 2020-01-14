@@ -12,15 +12,16 @@
       :key="topic.title"
       class="grid-topic"
     >
-      <p
-        :style="borderColor"
-        class="slide-content"
-      >
-        {{ topic.title }}
-      </p><div class="svg-container">
-        <a :style="borderColorLink" href=""><img :src="`icon/${topic.format.trim()}.svg`" class="ico-fluid"></a>
-      </div>
-      </p>
+      <a href="" @click.prevent="selectTopic(topic)">
+        <p
+          :style="borderColor"
+          class="slide-content"
+        >
+          {{ topic.title }}
+        </p><div class="svg-container">
+          <img :src="`icon/${topic.format.trim()}.svg`" class="ico-fluid">
+        </div>
+      </a>
     </div>
   </div>
 </template>
@@ -58,7 +59,7 @@ export default {
     borderColorLink () {
       if (this.slideContent) {
         return {
-          'border-bottom-color': this.slideContent.color
+          // 'border-bottom-color': this.slideContent.color
           // needs a hover rule too, not sure how to do it through here
         }
       }
@@ -70,6 +71,9 @@ export default {
   mounted () {
   },
   methods: {
+    selectTopic (topic) {
+      this.$emit('onTopicChange', topic)
+    }
   }
 }
 </script>
