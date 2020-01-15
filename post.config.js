@@ -1,5 +1,5 @@
 export default {
-  baseURL: '/gbic-project',
+  baseURL: '',
   title: 'Not So Golden: Struggles Facing California’s Young Adults',
   author: 'Static Author',
   publishDate: 'Oct. 2, 2019',
