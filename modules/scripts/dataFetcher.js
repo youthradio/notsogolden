@@ -74,7 +74,17 @@ function markdown2html (data) {
         return
       }
       if (typeof obj[key] === 'string' || obj[key] instanceof String) {
-        obj[key] = DOMPurify.sanitize(marked(obj[key]), configDOMPurify)
+        let configDom = {
+          ALLOWED_TAGS: ['a'],
+          KEEP_CONTENT: true
+        }
+        if (key === 'text') {
+          configDom = {
+            ALLOWED_TAGS: ['a', 'p'],
+            KEEP_CONTENT: true
+          }
+        }
+        obj[key] = DOMPurify.sanitize(marked(obj[key]), configDom)
       }
     })
   }

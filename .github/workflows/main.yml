@@ -17,4 +17,4 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd static/notsogolden
-          git pull && git fetch upstream && git merge upstream/master && git push
+          git fetch && git reset --hard FETCH_HEAD && git clean -df

@@ -24,10 +24,7 @@
           /></svg>
       </a>
     </div>
-    <CustomFormat
-      :format="topicFormat"
-      :link="topicLink"
-    />
+    <CustomFormat :topic="topic" />
   </div>
 </template>
 
@@ -49,24 +46,15 @@ export default {
       isEnable: false
     }
   },
-  computed: {
-    topicFormat () {
-      if (this.topic) {
-        return this.topic.format.trim()
-      }
-      return null
-    },
-    topicLink () {
-      if (this.topic) {
-        return this.topic.link.trim()
-      }
-      return null
-    }
-  },
   watch: {
     topic () {
       this.isEnable = true
     }
+  },
+  mounted () {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 27 || e.keyCode === 32) { this.setState(false) }
+    })
   },
   methods: {
     toggle () {

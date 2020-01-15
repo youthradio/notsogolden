@@ -3,6 +3,7 @@
     <h1 class="title">
       Getting by in California
     </h1>
+    <article v-html="articleData.text " />
     <SlideContainer
       v-for="theme in articleData.themes"
       :key="theme.title"
