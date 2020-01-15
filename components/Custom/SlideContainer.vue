@@ -12,14 +12,21 @@
       :key="topic.title"
       class="grid-topic"
     >
-      <a href="" @click.prevent="selectTopic(topic)">
+      <a
+        href=""
+        @click.prevent="selectTopic(topic)"
+      >
         <p
           :style="borderColor"
           class="slide-content"
         >
           {{ topic.title }}
-        </p><div class="svg-container">
-          <img :src="`icon/${topic.format.trim()}.svg`" class="ico-fluid">
+        </p>
+        <div class="svg-container">
+          <img
+            :src="`icon/${topic.format.trim()}.svg`"
+            class="ico-fluid"
+          >
         </div>
       </a>
     </div>
@@ -86,7 +93,7 @@ export default {
   width: 90%;
   height: auto;
 }
-.ico-fluid{
+.ico-fluid {
   max-height: 50px;
   max-width: 50px;
 }
@@ -102,7 +109,8 @@ export default {
   }
 }
 @include breakpoint(medium) {
-  .grid-topic:nth-child(5) {
+  .grid-topic:nth-child(5),
+  .grid-topic:nth-child(8) {
     grid-column-start: 2;
   }
 }
@@ -110,7 +118,7 @@ export default {
   font-family: $baseFont;
   font-size: 3rem;
 }
-.img-slide{
+.img-slide {
   border-top: 8px $green solid;
   margin-top: 1rem;
   @include breakpoint(medium) {
@@ -127,7 +135,7 @@ export default {
   }
 }
 
-.svg-container{
+.svg-container {
   margin: -1.1rem 0rem 0rem 0rem;
   @include breakpoint(medium) {
     margin: 0 1rem 0 1rem;
