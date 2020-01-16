@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title">
-      Getting by in California
-    </h1>
+    <HeaderContainer :article-data="articleData" />
     <article v-html="articleData.text " />
     <SlideContainer
       v-for="theme in articleData.themes"
@@ -23,11 +21,13 @@ import CommonUtils from '../mixins/CommonUtils'
 import ArticleData from '../data/data.json'
 import SlideContainer from '../components/Custom/SlideContainer'
 import OverlayContent from '../components/Custom/OverlayContent'
+import HeaderContainer from '../components/Header/HeaderContainer2'
 
 export default {
   components: {
     SlideContainer,
-    OverlayContent
+    OverlayContent,
+    HeaderContainer
   },
   mixins: [
     CommonUtils
