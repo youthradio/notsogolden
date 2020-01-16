@@ -27,6 +27,11 @@
     <template v-else-if="topicFormat === 'audio'">
       <h2> TITLE</h2>
       <article v-html="topic.text" />
+
+      <img
+        :src="topic.featureImage"
+        class="img-fluid"
+      >
       <vue-plyr>
         <audio>
           <source
@@ -74,6 +79,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.auto-margin > * {
+  display: block;
+  width: auto;
+  margin: auto;
+}
 .img-fluid {
   width: 100%;
   height: auto;
@@ -86,10 +96,5 @@ export default {
 }
 .center {
   justify-content: center;
-}
-.auto-margin > * {
-  display: block;
-  width: auto;
-  margin: auto;
 }
 </style>
