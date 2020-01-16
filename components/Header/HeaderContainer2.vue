@@ -100,9 +100,10 @@ export default {
   background-color: #FFDF38;
 }
 .bg-srcimg{
-    opacity: 0.5;
+  opacity: 0.5;
   width: 100%;
   max-width: 100%;
   object-fit: contain;
+  vertical-align: top;
 }
 </style>
