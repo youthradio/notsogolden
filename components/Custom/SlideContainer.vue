@@ -1,34 +1,36 @@
 <template>
-  <div class="grid-container">
-    <div class="grid-image">
+  <div class="temp-container">
+    <div class="img-container">
       <img
         :style="borderColor"
         class="img-fluid img-slide"
         :src="`${slideContent.featureImage}`"
       >
     </div>
-    <div
-      v-for="topic in slideContent.topics"
-      :key="topic.title"
-      class="grid-topic"
-    >
-      <a
-        href=""
-        @click.prevent="selectTopic(topic)"
+    <div class="grid-container">
+      <div
+        v-for="topic in slideContent.topics"
+        :key="topic.title"
+        class="grid-topic"
       >
-        <p
-          :style="borderColor"
-          class="slide-content"
+        <a
+          href=""
+          @click.prevent="selectTopic(topic)"
         >
-          {{ topic.title }}
-        </p>
-        <div class="svg-container">
-          <img
-            :src="`icon/${topic.format.trim()}.svg`"
-            class="ico-fluid"
+          <p
+            :style="borderColor"
+            class="slide-content"
           >
-        </div>
-      </a>
+            {{ topic.title }}
+          </p>
+          <div class="svg-container">
+            <img
+              :src="`icon/${topic.format.trim()}.svg`"
+              class="ico-fluid"
+            >
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -104,16 +106,16 @@ export default {
   grid-template-rows: auto;
 
   @include breakpoint(medium) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
   }
 }
-@include breakpoint(medium) {
+/* @include breakpoint(medium) {
   .grid-topic:nth-child(5),
   .grid-topic:nth-child(8) {
     grid-column-start: 2;
   }
-}
+}*/
 .title {
   font-family: $baseFont;
   font-size: 3rem;

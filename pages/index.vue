@@ -2,12 +2,15 @@
   <div class="container">
     <HeaderContainer :article-data="articleData" />
     <article v-html="articleData.text " />
-    <SlideContainer
-      v-for="theme in articleData.themes"
-      :key="theme.title"
-      :slide-content="theme"
-      @onTopicChange="onTopicChange"
-    />
+    <article>
+      <SlideContainer
+        v-for="theme in articleData.themes"
+        :key="theme.title"
+        :slide-content="theme"
+        class="slide-container"
+        @onTopicChange="onTopicChange"
+      />
+    </article>
     <OverlayContent
       ref="overlay"
       :topic="activeTopic"
@@ -68,6 +71,10 @@ export default {
 .container {
   padding: 0 0 0 0.2rem;
   width: 100%;
+}
+.slide-container{
+
+  max-width: 36.3rem;
 }
 .title{
   font-family: $baseFont;
