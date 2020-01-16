@@ -1,6 +1,9 @@
 <template>
   <div class="temp-container">
     <div class="img-container">
+      <h2 class="theme-title">
+        {{ slideContent.theme }}
+      </h2>
       <img
         :style="borderColor"
         class="img-fluid img-slide"
@@ -92,14 +95,26 @@ export default {
 @import "~@/css/base";
 @import "~@/css/mixins";
 .img-fluid {
-  width: 90%;
-  height: 302px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   object-position: bottom;
 }
 .ico-fluid {
   max-height: 50px;
   max-width: 50px;
+}
+
+.theme-title{
+  margin: 0;
+  line-height: 0;
+}
+
+.temp-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 .grid-container {
@@ -124,9 +139,7 @@ export default {
 }
 .img-slide {
   border-top: 8px $green solid;
-  margin-top: 1rem;
   @include breakpoint(medium) {
-    margin: 0 1rem 0 1rem;
   }
 }
 .slide-content {
@@ -135,14 +148,14 @@ export default {
   margin-top: 1rem;
   font-weight: 600;
   @include breakpoint(medium) {
-    margin: 0 1rem 0 1rem;
+    /* margin: 0 1rem 0 1rem; */
   }
 }
 
 .svg-container {
   margin: -1.1rem 0rem 0rem 0rem;
   @include breakpoint(medium) {
-    margin: 0 1rem 0 1rem;
+    /* margin: 0 1rem 0 1rem; */
   }
 }
 </style>
