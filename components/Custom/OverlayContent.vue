@@ -82,6 +82,8 @@ export default {
   width: 50px;
   height: auto;
   color: white;
+  stroke: rgba(#333333, 0.6);
+  stroke-width: 10px;
 }
 a,
 a:hover {

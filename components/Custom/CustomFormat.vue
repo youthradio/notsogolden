@@ -27,11 +27,6 @@
     <template v-else-if="topicFormat === 'audio'">
       <h2> TITLE</h2>
       <article v-html="topic.text" />
-
-      <img
-        :src="topic.featureImage"
-        class="img-fluid"
-      >
       <vue-plyr>
         <audio>
           <source
@@ -40,6 +35,10 @@
           >
         </audio>
       </vue-plyr>
+      <img
+        :src="topic.featureImage"
+        class="img-fluid"
+      >
     </template>
   </div>
 </template>
