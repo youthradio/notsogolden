@@ -93,7 +93,9 @@ export default {
 @import "~@/css/mixins";
 .img-fluid {
   width: 90%;
-  height: auto;
+  height: 302px;
+  object-fit: cover;
+  object-position: bottom;
 }
 .ico-fluid {
   max-height: 50px;

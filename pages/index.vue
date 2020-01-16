@@ -72,10 +72,6 @@ export default {
   padding: 0 0 0 0.2rem;
   width: 100%;
 }
-.slide-container{
-
-  max-width: 36.3rem;
-}
 .title{
   font-family: $baseFont;
   font-size: 3rem;
