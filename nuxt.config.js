@@ -117,6 +117,7 @@ export default {
       }
     }
   },
+  // list of all possible routes, nuxt will generate the static pages
   generate: {
     routes: [].concat(...ArticleData.content
       .themes.map(theme =>

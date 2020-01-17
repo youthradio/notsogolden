@@ -2,18 +2,22 @@
   <div class="player">
     <h2>
       <NuxtLink to="/">
-        THE TOPIC
+        Home
       </NuxtLink>
+      >>
+      {{ theme.title }}
     </h2>
-    <div>
-      {{ topic }}
-    </div>
+    <CustomFormat :topic="topic" />
   </div>
 </template>
 
 <script>
+import CustomFormat from '../../../components/Custom/CustomFormat'
 
 export default {
+  components: {
+    CustomFormat
+  },
   validate ({ env, params }) {
     // validade is input params thems is in avalable list
     const theme = env.ArticleData.content.themes.find(theme => theme.slug === params.theme)
@@ -26,14 +30,17 @@ export default {
     // if (!theme) {
     // return error({ message: 'Theme not found', statusCode: 404 })
     // }
-    return { topic }
+    return { topic, theme }
   },
   // validate ({ params }) {
   //   return !isNa(+params.theme)
   // },
   mounted () {
-    console.log(this.$route.params)
-    console.log('TESTING')
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 27 || e.keyCode === 32) {
+        this.$router.back()
+      }
+    })
   },
   head () {
     return {
@@ -44,11 +51,7 @@ export default {
 </script>
 
 <style scoped>
-.player {
-  text-align: center;
-  margin-top: 100px;
-  font-family: sans-serif;
-}
+
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.4s, transform 0.4s;

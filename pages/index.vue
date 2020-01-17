@@ -11,23 +11,16 @@
         @onTopicChange="onTopicChange"
       />
     </article>
-    <OverlayContent
-      ref="overlay"
-      :topic="activeTopic"
-      @closeOverlay="closeOverlay"
-    />
   </div>
 </template>
 
 <script>
 import SlideContainer from '../components/Custom/SlideContainer'
-import OverlayContent from '../components/Custom/OverlayContent'
 import HeaderContainer from '../components/Header/HeaderContainer2'
 
 export default {
   components: {
     SlideContainer,
-    OverlayContent,
     HeaderContainer
   },
   asyncData ({ env }) {

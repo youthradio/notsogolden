@@ -1,22 +1,22 @@
 <template>
   <div class="auto-margin">
-    <template v-if="topicFormat === 'graphic'">
+    <template v-if="topic.format === 'graphic'">
       <img
-        :src="topicLink"
+        :src="topic.link"
         class="img-fluid graphic"
       >
     </template>
-    <template v-else-if="topicFormat === 'text'">
+    <template v-else-if="topic.format === 'text'">
       <h2> TITLE</h2>
       <article v-html="topic.text" />
     </template>
-    <template v-else-if="topicFormat === 'video'">
+    <template v-else-if="topic.format === 'video'">
       <h2> TITLE</h2>
       <article v-html="topic.text" />
       <vue-plyr>
         <div class="plyr__video-embed">
           <iframe
-            :src="`https://www.youtube.com/embed/${topicLink}?iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&rel=0&enablejsapi=1`"
+            :src="`https://www.youtube.com/embed/${topic.link}?iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&rel=0&enablejsapi=1`"
             allowfullscreen
             allowtransparency
             allow="autoplay"
@@ -24,13 +24,13 @@
         </div>
       </vue-plyr>
     </template>
-    <template v-else-if="topicFormat === 'audio'">
+    <template v-else-if="topic.format === 'audio'">
       <h2> TITLE</h2>
       <article v-html="topic.text" />
       <vue-plyr>
         <audio>
           <source
-            :src="topicLink"
+            :src="topic.link"
             type="audio/mp3"
           >
         </audio>
@@ -58,18 +58,7 @@ export default {
     }
   },
   computed: {
-    topicFormat () {
-      if (this.topic) {
-        return this.topic.format.trim()
-      }
-      return null
-    },
-    topicLink () {
-      if (this.topic) {
-        return this.topic.link.trim()
-      }
-      return null
-    }
+
   },
   methods: {
 
