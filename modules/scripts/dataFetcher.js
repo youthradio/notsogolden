@@ -5,6 +5,7 @@ import Gootenberg from 'gootenberg'
 import marked from 'marked'
 import createDOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
+import utils from '../../util/utils.js'
 import credentials from './credentials.json'
 
 const DOMPurify = createDOMPurify(new JSDOM('').window)
@@ -84,7 +85,11 @@ function markdown2html (data) {
             KEEP_CONTENT: true
           }
         }
-        obj[key] = DOMPurify.sanitize(marked(obj[key]), configDom)
+        obj[key] = DOMPurify.sanitize(marked(obj[key]), configDom).trim()
+        // make slugs from titles
+        if (key === 'title') {
+          obj.slug = utils.makeSlug(obj[key])
+        }
       }
     })
   }
@@ -103,6 +108,7 @@ export async function customFetcher () {
     // eslint-disable-next-line no-console
     console.log('Error fetching data', e)
   }
+  // convertedData
 
   // return some JSON Object
   return convertedData

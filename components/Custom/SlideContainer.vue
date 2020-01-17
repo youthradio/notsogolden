@@ -2,7 +2,7 @@
   <div class="temp-container">
     <div class="img-container">
       <h2 class="theme-title">
-        {{ slideContent.theme }}
+        {{ slideContent.title }}
       </h2>
       <img
         :style="borderColor"
@@ -16,10 +16,11 @@
         :key="topic.title"
         class="grid-topic"
       >
-        <a
+        <NuxtLink :to="slideContent.slug + '/' + topic.slug">
+          <!-- <a
           href=""
           @click.prevent="selectTopic(topic)"
-        >
+        > -->
           <p
             :style="borderColor"
             class="slide-content"
@@ -32,7 +33,7 @@
               class="ico-fluid"
             >
           </div>
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </div>

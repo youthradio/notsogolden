@@ -20,8 +20,6 @@
 </template>
 
 <script>
-import CommonUtils from '../mixins/CommonUtils'
-import ArticleData from '../data/data.json'
 import SlideContainer from '../components/Custom/SlideContainer'
 import OverlayContent from '../components/Custom/OverlayContent'
 import HeaderContainer from '../components/Header/HeaderContainer2'
@@ -32,12 +30,9 @@ export default {
     OverlayContent,
     HeaderContainer
   },
-  mixins: [
-    CommonUtils
-  ],
-  asyncData (ctx) {
+  asyncData ({ env }) {
     return {
-      articleData: ArticleData.content
+      articleData: env.ArticleData.content
     }
   },
   data () {
@@ -75,5 +70,17 @@ export default {
 .title{
   font-family: $baseFont;
   font-size: 3rem;
+}
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.4s, transform 0.4s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  opacity: 1;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0.5;
+  transform: translateX(+100%);
 }
 </style>

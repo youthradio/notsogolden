@@ -1,14 +1,18 @@
 import dotenv from 'dotenv'
+import ArticleData from './data/data.json'
 import POSTCONFIG from './post.config'
+
 dotenv.config()
 process.env.DEBUG = 'nuxt:*'
 
 export default {
   mode: 'universal',
-
   /*
   ** Headers of the page
   */
+  env: {
+    ArticleData
+  },
   router: {
     base: POSTCONFIG.baseURL
   },
@@ -112,6 +116,12 @@ export default {
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
     }
+  },
+  generate: {
+    routes: [].concat(...ArticleData.content
+      .themes.map(theme =>
+        theme.topics.map(topic =>
+          `/${theme.slug}/${topic.slug}`)))
   }
   // server: {
   //   https: {
