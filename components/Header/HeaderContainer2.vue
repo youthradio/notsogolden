@@ -16,7 +16,6 @@
         alt="The golden gate bridge"
 
         class="img-fluid lazyload bg-srcimg"
-        @load="updateHeaderHeight"
       >
     </div>
   </header>

@@ -1,22 +1,29 @@
 <template>
-  <div class="player">
-    <h2 class="breadcrumb">
-      <NuxtLink to="/">
-        Home
-      </NuxtLink>
-      ->
-      {{ theme.title }}
-    </h2>
-    <CustomFormat :topic="topic" />
+  <div>
+    <HeaderContainer :article-data="articleData" />
+
+    <div class="player">
+      <h2 class="breadcrumb">
+        <NuxtLink to="/">
+          Home
+        </NuxtLink>
+        ->
+        {{ theme.title }}
+      </h2>
+      <CustomFormat :topic="topic" />
+    </div>
   </div>
 </template>
 
 <script>
 import CustomFormat from '../../../components/Custom/CustomFormat'
+import HeaderContainer from '../../../components/Header/HeaderContainer2'
 
 export default {
   components: {
-    CustomFormat
+    CustomFormat,
+    HeaderContainer
+
   },
   validate ({ env, params }) {
     // validade is input params thems is in avalable list
@@ -30,7 +37,7 @@ export default {
     // if (!theme) {
     // return error({ message: 'Theme not found', statusCode: 404 })
     // }
-    return { topic, theme }
+    return { articleData: env.ArticleData.content, topic, theme }
   },
   // validate ({ params }) {
   //   return !isNa(+params.theme)
