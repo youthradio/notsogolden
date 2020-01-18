@@ -37,8 +37,6 @@ export default {
   watch: {
 
   },
-  mounted () {
-  },
   methods: {
     closeOverlay () {
       this.activeTopic = null

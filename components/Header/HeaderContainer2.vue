@@ -1,8 +1,8 @@
 <template>
   <header class="article-header">
     <div class="top-container title">
-      <h1> Not So Golden </h1>
-      <h3> Struggles Facing California's Young Adults </h3>
+      <h1> {{ articleData.title }} </h1>
+      <h3> {{ articleData.subtitle }} </h3>
     </div>
     <div class="bg-container">
       <img

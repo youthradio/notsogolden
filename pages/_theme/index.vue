@@ -36,10 +36,6 @@ export default {
   // validate ({ params }) {
   //   return !isNa(+params.theme)
   // },
-  mounted () {
-    console.log(this.$route.params)
-    console.log('TESTING')
-  },
   head () {
     return {
       title: this.name

@@ -99,8 +99,8 @@ export default {
       page_title: POSTCONFIG.title,
       page_path: POSTCONFIG.baseURL
     },
-    debug: false, // enable to track in dev mode
-    disableAutoPageTrack: true // disable if you don't want to track each page route with router.afterEach(...).
+    debug: true, // enable to track in dev mode
+    disableAutoPageTrack: false // disable if you don't want to track each page route with router.afterEach(...).
   },
 
   /*
