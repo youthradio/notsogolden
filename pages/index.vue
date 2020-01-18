@@ -74,4 +74,5 @@ export default {
   opacity: 0.5;
   transform: translateX(+100%);
 }
+
 </style>
