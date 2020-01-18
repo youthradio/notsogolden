@@ -1,16 +1,18 @@
 <template>
   <div class="auto-margin">
-    <template v-if="topic.format === 'graphic'">
+    <template v-if="topic.format === 'graphic'" class="template-container">
       <img
         :src="topic.link"
         class="img-fluid graphic"
       >
     </template>
-    <template v-else-if="topic.format === 'text'">
-      <h2> TITLE</h2>
+    <template v-else-if="topic.format === 'text'" class="template-container">
+      <h2 class="header-title">
+        TITLE
+      </h2>
       <article v-html="topic.text" />
     </template>
-    <template v-else-if="topic.format === 'video'">
+    <template v-else-if="topic.format === 'video'" class="template-container">
       <h2> TITLE</h2>
       <article v-html="topic.text" />
       <vue-plyr>
@@ -24,7 +26,7 @@
         </div>
       </vue-plyr>
     </template>
-    <template v-else-if="topic.format === 'audio'">
+    <template v-else-if="topic.format === 'audio'" class="template-container">
       <h2> TITLE</h2>
       <article v-html="topic.text" />
       <vue-plyr>
@@ -70,14 +72,22 @@ export default {
 .auto-margin > * {
   display: block;
   width: auto;
-  margin: auto;
+  padding: 0.2rem 6rem 0rem 6rem;
+}
+.auto-margin{
+  background-color: #C4C4C4 !important;
 }
 .img-fluid {
   width: 100%;
   height: auto;
 }
+.header-title{
+
+}
 .graphic {
   max-width: 32rem;
+  margin: 0 auto;
+  text-align: center;
 }
 .flex {
   display: flex;

@@ -1,10 +1,10 @@
 <template>
   <div class="player">
-    <h2>
+    <h2 class="breadcrumb">
       <NuxtLink to="/">
         Home
       </NuxtLink>
-      >>
+      ->
       {{ theme.title }}
     </h2>
     <CustomFormat :topic="topic" />
@@ -50,7 +50,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "~@/css/vars";
+@import "~@/css/base";
+@import "~@/css/mixins";
 
 .page-enter-active,
 .page-leave-active {
@@ -59,9 +62,24 @@ export default {
   backface-visibility: hidden;
   opacity: 1;
 }
+
+.player{
+  background-color: #C4C4C4 !important;
+}
 .page-enter,
 .page-leave-active {
   opacity: 0.5;
   transform: translateX(+100%);
+}
+
+.breadcrumb {
+  font-family: $baseFont;
+  font-size: 60%;
+
+  color: $red;
+  a {
+    color: $red;
+  }
+  padding: 0.2rem 6rem 0rem 6rem;
 }
 </style>
