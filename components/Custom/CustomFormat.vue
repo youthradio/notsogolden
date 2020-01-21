@@ -72,7 +72,6 @@ export default {
 .auto-margin > * {
   display: block;
   width: auto;
-  padding: 0.2rem 6rem 0rem 6rem;
 }
 .auto-margin{
   background-color: #C4C4C4 !important;
