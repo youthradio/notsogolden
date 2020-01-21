@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderContainer :article-data="articleData" />
+    <HeaderContainer head-type="subpage" :article-data="articleData" />
 
     <div class="player">
       <h2 class="breadcrumb">
