@@ -81,7 +81,7 @@ function markdown2html (data) {
         }
         if (key === 'text') {
           configDom = {
-            ALLOWED_TAGS: ['a', 'p'],
+            ALLOWED_TAGS: ['a', 'p', 'img'],
             KEEP_CONTENT: true
           }
         }
