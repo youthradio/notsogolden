@@ -1,19 +1,39 @@
 <template>
   <div class="auto-margin">
     <template v-if="topic.format === 'graphic'" class="template-container">
+      <article>
+        <h2 class="header-title">
+          {{ topic.title }}
+        </h2>
+        <h4 v-if="topic.byline" class="by-line">
+          {{ topic.byline }}
+        </h4>
+      </article>
       <img
         :src="topic.link"
         class="img-fluid graphic"
       >
     </template>
     <template v-else-if="topic.format === 'text'" class="template-container">
-      <h2 class="header-title">
-        TITLE
-      </h2>
+      <article>
+        <h2 class="header-title">
+          {{ topic.title }}
+        </h2>
+        <h4 v-if="topic.byline" class="by-line">
+          {{ topic.byline }}
+        </h4>
+      </article>
       <article v-html="topic.text" />
     </template>
     <template v-else-if="topic.format === 'video'" class="template-container">
-      <h2> TITLE</h2>
+      <article>
+        <h2 class="header-title">
+          {{ topic.title }}
+        </h2>
+        <h4 v-if="topic.byline" class="by-line">
+          {{ topic.byline }}
+        </h4>
+      </article>
       <article v-html="topic.text" />
       <vue-plyr>
         <div class="plyr__video-embed">
@@ -27,7 +47,14 @@
       </vue-plyr>
     </template>
     <template v-else-if="topic.format === 'audio'" class="template-container">
-      <h2> TITLE</h2>
+      <article>
+        <h2 class="header-title">
+          {{ topic.title }}
+        </h2>
+        <h4 v-if="topic.byline" class="by-line">
+          {{ topic.byline }}
+        </h4>
+      </article>
       <article v-html="topic.text" />
       <vue-plyr>
         <audio>
