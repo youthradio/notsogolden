@@ -1,36 +1,51 @@
 <template>
   <div class="auto-margin">
-    <template v-if="topic.format === 'graphic'" class="template-container">
+    <template
+      v-if="topic.format === 'graphic'"
+      class="template-container"
+    >
       <article>
         <h2 class="header-title">
           {{ topic.title }}
         </h2>
-        <h4 v-if="topic.byline" class="by-line">
-          {{ topic.byline }}
-        </h4>
-      </article>
-      <img
-        :src="topic.link"
-        class="img-fluid graphic"
-      >
-    </template>
-    <template v-else-if="topic.format === 'text'" class="template-container">
-      <article>
-        <h2 class="header-title">
-          {{ topic.title }}
-        </h2>
-        <h4 v-if="topic.byline" class="by-line">
+        <h4
+          v-if="topic.byline"
+          class="by-line"
+        >
           {{ topic.byline }}
         </h4>
       </article>
       <article v-html="topic.text" />
     </template>
-    <template v-else-if="topic.format === 'video'" class="template-container">
+    <template
+      v-else-if="topic.format === 'text'"
+      class="template-container"
+    >
       <article>
         <h2 class="header-title">
           {{ topic.title }}
         </h2>
-        <h4 v-if="topic.byline" class="by-line">
+        <h4
+          v-if="topic.byline"
+          class="by-line"
+        >
+          {{ topic.byline }}
+        </h4>
+      </article>
+      <article v-html="topic.text" />
+    </template>
+    <template
+      v-else-if="topic.format === 'video'"
+      class="template-container"
+    >
+      <article>
+        <h2 class="header-title">
+          {{ topic.title }}
+        </h2>
+        <h4
+          v-if="topic.byline"
+          class="by-line"
+        >
           {{ topic.byline }}
         </h4>
       </article>
@@ -46,12 +61,18 @@
         </div>
       </vue-plyr>
     </template>
-    <template v-else-if="topic.format === 'audio'" class="template-container">
+    <template
+      v-else-if="topic.format === 'audio'"
+      class="template-container"
+    >
       <article>
         <h2 class="header-title">
           {{ topic.title }}
         </h2>
-        <h4 v-if="topic.byline" class="by-line">
+        <h4
+          v-if="topic.byline"
+          class="by-line"
+        >
           {{ topic.byline }}
         </h4>
       </article>
