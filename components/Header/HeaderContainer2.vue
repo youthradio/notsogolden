@@ -9,9 +9,9 @@
         <h2>
           {{ articleData.title }}
         </h2>
-        <h5>
+        <h3>
           {{ articleData.subtitle }}
-        </h5>
+        </h3>
       </article>
     </div>
     <div v-if="headType === 'main'" :class="[headType === 'main' ? 'bg-container' : '' ]">
@@ -72,14 +72,9 @@ export default {
 @import "~@/css/base";
 @import "~@/css/mixins";
 
-.title{
-  font-family: $baseFont;
-  font-size: 3rem;
-}
-
-.sub-title{
-  h2,h5{
-    padding: 0
+.sub-title, .title{
+  h1,h2,p{
+    padding: 0;
     }
 }
 
@@ -108,11 +103,9 @@ export default {
   text-align: center;
   z-index: 1;
   h1 {
-      font-size: 50%
     }
   @include breakpoint(small){
     h1 {
-      font-size: 100%;
     }
   }
   h3 {

@@ -106,11 +106,6 @@ export default {
   max-width: 50px;
 }
 
-.theme-title{
-  margin: 0;
-  line-height: 0;
-}
-
 .temp-container{
   display: flex;
   flex-direction: column;
