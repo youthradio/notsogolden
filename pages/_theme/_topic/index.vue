@@ -1,22 +1,31 @@
 <template>
   <div>
-    <HeaderContainer head-type="subpage" :article-data="articleData" />
-
-    <div class="player">
+    <NuxtLink to="/">
+      <HeaderContainer
+        head-type="subpage"
+        :article-data="articleData"
+      />
+    </NuxtLink>
+    <div>
       <h2 class="breadcrumb">
-        <article>
-          Home ->
-          {{ theme.title }}
+        <article class="a-cleaned">
+          <NuxtLink to="/">
+            Home ->
+            {{ theme.title }}
+          </NuxtLink>
         </article>
       </h2>
       <CustomFormat :topic="topic" />
       <article>
-        <div class="">
-          <img class="ico-fluid" src="icon/bridge.svg">
-        </div>
         <NuxtLink to="/">
+          <div class="">
+            <img
+              class="ico-fluid"
+              src="icon/bridge.svg"
+            >
+          </div>
           <div class="return-container">
-            Go Back to Collection
+            Go Back to Series
           </div>
         </NuxtLink>
       </article>
@@ -60,7 +69,22 @@ export default {
   },
   head () {
     return {
-      title: this.name
+      title: this.articleData.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.articleData.SEO },
+        { hid: 'og:title', property: 'og:title', content: this.articleData.title },
+        { hid: 'og:site_name', property: 'og:site_name', content: this.articleData.title },
+        { hid: 'og:url', property: 'og:url', content: this.$route.fullPath },
+        { hid: 'og:image', property: 'og:image', content: this.articleData.SEOImage },
+        { hid: 'og:description', property: 'og:description', content: this.articleData.SEO },
+        { hid: 'og:image:alt', property: 'og:image:alt', content: this.articleData.SEOImageDesc },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.articleData.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.articleData.SEO },
+        { hid: 'twitter:image', name: 'twitter:image', content: this.articleData.SEOImage },
+        { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: this.articleData.SEOImageDesc },
+        { hid: 'itemprop:description', itemprop: 'description', content: this.articleData.SEO },
+        { hid: 'itemprop:image', itemprop: 'image', content: this.articleData.SEOImage }
+      ]
     }
   }
 }
@@ -71,44 +95,47 @@ export default {
 @import "~@/css/base";
 @import "~@/css/mixins";
 
-.page-enter-active,
-.page-leave-active {
+.page-enter-active {
   transition: opacity 0.4s, transform 0.4s;
   transform-style: preserve-3d;
   backface-visibility: hidden;
   opacity: 1;
 }
 
-.player{
-  background-color: #C4C4C4 !important;
+.page-enter {
+  opacity: 0.5;
+  transform: translateX(-100%);
 }
-.page-enter,
+
 .page-leave-active {
   opacity: 0.5;
   transform: translateX(+100%);
 }
-.bcrumb-origin{
+.bcrumb-origin {
   color: $black;
 }
 .breadcrumb {
   font-family: $baseFont;
   font-size: 60%;
 
-  color: $red;
+  color: #5d4e01;
   a {
-    color: $red;
+    color: #5d4e01;
   }
   padding: 0;
-  article{
+  article {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
-.return-container{
-  color: $red
+.return-container {
+  color: $red;
 }
 .ico-fluid {
   max-height: 122px;
   max-width: 130px;
+}
+.a-cleaned > a {
+  border-bottom: none !important;
 }
 </style>

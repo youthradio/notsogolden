@@ -10,10 +10,6 @@ export default {
   featureImagePath: 'images/template-feature-image',
   featureImageDescription: 'Woman looking at kiosk.',
   featureImageCaption: '(Photo: Andersen Ross Photography Inc/Getty Images)',
-
-  wpPostSlug: 'north-carolina-vs-vaping-companies',
-  wpPostID: '60986',
   // you might not need to change
-  fbAppID: '73080818131',
-  twitterHandler: '@itsyrmedia'
+  twitterHandler: '@youthmediaBHC'
 }
