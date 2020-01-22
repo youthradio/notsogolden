@@ -3,15 +3,15 @@
     <div :class="[headType === 'main' ? 'top-container title' : 'sub-container sub-title' ]">
       <article v-if="headType === 'main'">
         <h1> {{ articleData.title }} </h1>
-        <p> {{ articleData.subtitle }} </p>
+        <h3> {{ articleData.subtitle }} </h3>
       </article>
       <article v-if="headType === 'subpage'">
         <h2>
           {{ articleData.title }}
         </h2>
-        <p>
+        <h3>
           {{ articleData.subtitle }}
-        </p>
+        </h3>
       </article>
     </div>
     <div v-if="headType === 'main'" :class="[headType === 'main' ? 'bg-container' : '' ]">

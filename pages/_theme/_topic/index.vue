@@ -7,14 +7,14 @@
       />
     </NuxtLink>
     <div>
-      <h2 class="breadcrumb">
+      <div class="breadcrumb">
         <article class="a-cleaned">
           <NuxtLink to="/">
             Home ->
             {{ theme.title }}
           </NuxtLink>
         </article>
-      </h2>
+      </div>
       <CustomFormat :topic="topic" />
       <article>
         <NuxtLink to="/">
@@ -115,17 +115,10 @@ export default {
   color: $black;
 }
 .breadcrumb {
-  font-family: $baseFont;
   font-size: 60%;
-
   color: #5d4e01;
   a {
     color: #5d4e01;
-  }
-  padding: 0;
-  article {
-    margin-top: 0;
-    margin-bottom: 0;
   }
 }
 .return-container {

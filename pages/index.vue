@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <HeaderContainer :article-data="articleData" />
-    <article v-html="articleData.text " />
+    <article class="b-copy" v-html="articleData.text " />
     <article>
       <SlideContainer
         v-for="theme in articleData.themes"
