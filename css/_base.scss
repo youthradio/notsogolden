@@ -11,7 +11,7 @@ body {
 html {
   /* Change default typefaces here */
   font-family: $baseFont;
-  font-size: $baseFontSize / 22 * 100%;
+  font-size: $baseFontSize / 24 * 100%;
   // Make everything look a little nicer in webkit
   -webkit-font-smoothing: antialiased;
   // -webkit-text-size-adjust: auto
@@ -29,22 +29,18 @@ html {
 
 h3 {
   font-weight: 100;
-  font-family: $baseFontHeaders;
   letter-spacing: 1.84px;
   // text-transform: uppercase;
   // color: $black;
 }
 
 h4 {
-  font-weight: 300;
-  font-family: $baseFontHeaders;
+  font-weight: 100;
   // text-transform: uppercase;
-  letter-spacing: 2px;
 }
 h5 {
-  font-weight: 300;
-  font-family: $baseFontHeaders;
-  text-transform: uppercase;
+  font-weight: 100;
+  // text-transform: uppercase;
   letter-spacing: 1px;
 }
 a {
@@ -130,31 +126,35 @@ h4,
 h5,
 h6 {
   /* Change heading typefaces here */
-  font-family: $baseFontHeaders;
-  padding-top: $leading;
-  padding-bottom: $leading;
-
   margin: 0;
   line-height: $leading;
 }
 h1 {
-  font-size: 3 * $scale * 1rem;
-  line-height: 3 * $leading;
+  font-family: $baseFontHeaders;
+  font-size: 2.9rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.2rem;
 }
 h2 {
-  font-size: 1.2 * $scale * 1rem;
-  line-height: 2 * $leading;
+  font-family: $baseFontHeaders;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
 }
 h3 {
-  font-size: 1 * $scale * 1rem;
+  font-family: $baseFont;
+  font-size: 1.3rem;
+  letter-spacing: 0;
 }
 h4 {
+  font-family: $baseFont;
   font-size: $scale / 1.5 * 1rem;
 }
 h5 {
+  font-family: $baseFont;;
   font-size: $scale / 2 * 1rem;
 }
 h6 {
+  font-family: $baseFont;
   font-size: $scale / 4 * 1rem;
 }
 /* Tables */
@@ -184,6 +184,12 @@ code {
 
 .hug {
   margin-top: 0;
+}
+
+/* specificly for body copy */
+.b-copy {
+  font-size: 0.9rem;
+  line-height: 1.1rem;
 }
 
 .plyr--full-ui input[type=range] {

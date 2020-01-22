@@ -1,10 +1,10 @@
 <template>
-  <div class="auto-margin">
+  <div class="auto-margin b-copy">
     <template v-if="topic.format === 'graphic'" class="template-container">
       <article>
-        <h2 class="header-title">
+        <h1 class="header-title">
           {{ topic.title }}
-        </h2>
+        </h1>
         <h4 v-if="topic.byline" class="by-line">
           {{ topic.byline }}
         </h4>
@@ -16,9 +16,9 @@
     </template>
     <template v-else-if="topic.format === 'text'" class="template-container">
       <article>
-        <h2 class="header-title">
+        <h1 class="header-title">
           {{ topic.title }}
-        </h2>
+        </h1>
         <h4 v-if="topic.byline" class="by-line">
           {{ topic.byline }}
         </h4>
@@ -27,9 +27,9 @@
     </template>
     <template v-else-if="topic.format === 'video'" class="template-container">
       <article>
-        <h2 class="header-title">
+        <h1 class="header-title">
           {{ topic.title }}
-        </h2>
+        </h1>
         <h4 v-if="topic.byline" class="by-line">
           {{ topic.byline }}
         </h4>
@@ -48,9 +48,9 @@
     </template>
     <template v-else-if="topic.format === 'audio'" class="template-container">
       <article>
-        <h2 class="header-title">
+        <h1 class="header-title">
           {{ topic.title }}
-        </h2>
+        </h1>
         <h4 v-if="topic.byline" class="by-line">
           {{ topic.byline }}
         </h4>
