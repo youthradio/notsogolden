@@ -5,14 +5,21 @@
     <div class="player">
       <h2 class="breadcrumb">
         <article>
-          <NuxtLink to="/">
-            Home
-          </NuxtLink>
-          ->
+          Home ->
           {{ theme.title }}
         </article>
       </h2>
       <CustomFormat :topic="topic" />
+      <article>
+        <div class="">
+          <img class="ico-fluid" src="icon/bridge.svg">
+        </div>
+        <NuxtLink to="/">
+          <div class="return-container">
+            Go Back to Collection
+          </div>
+        </NuxtLink>
+      </article>
     </div>
   </div>
 </template>
@@ -80,7 +87,9 @@ export default {
   opacity: 0.5;
   transform: translateX(+100%);
 }
-
+.bcrumb-origin{
+  color: $black;
+}
 .breadcrumb {
   font-family: $baseFont;
   font-size: 60%;
@@ -94,5 +103,12 @@ export default {
     margin-top: 0;
     margin-bottom: 0;
   }
+}
+.return-container{
+  color: $red
+}
+.ico-fluid {
+  max-height: 122px;
+  max-width: 130px;
 }
 </style>
