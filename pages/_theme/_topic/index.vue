@@ -2,7 +2,7 @@
   <div>
     <HeaderContainer head-type="subpage" :article-data="articleData" />
 
-    <div class="player">
+    <div>
       <h2 class="breadcrumb">
         <article>
           <NuxtLink to="/">
@@ -53,7 +53,23 @@ export default {
   },
   head () {
     return {
-      title: this.name
+      title: this.articleData.title,
+      meta: [
+        { hid: 'description', name: 'description', content: 'POST_DESC' },
+        { hid: 'og:title', property: 'og:title', content: this.articleData.title },
+        { hid: 'og:site_name', property: 'og:site_name', content: this.articleData.title },
+        { hid: 'og:type', property: 'og:type', content: 'website' },
+        { hid: 'og:url', property: 'og:url', content: 'THIS_URL' },
+        { hid: 'og:image', property: 'og:image', content: 'FEATURE_IMAGE_LINK' },
+        { hid: 'og:description', property: 'og:description', content: 'POST_DESC' },
+        { hid: 'og:image:alt', property: 'og:image:alt', content: 'FEATURE_IMAGE_DESC' },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.articleData.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: 'POST_DESC' },
+        { hid: 'twitter:image', name: 'twitter:image', content: 'FEATURE_IMAGE_LINK' },
+        { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'FEATURE_IMAGE_DESC' },
+        { hid: 'itemprop:description', itemprop: 'description', content: 'POST_DESC' },
+        { hid: 'itemprop:image', itemprop: 'image', content: 'FEATURE_IMAGE_LINK' }
+      ]
     }
   }
 }
@@ -72,9 +88,6 @@ export default {
   opacity: 1;
 }
 
-.player{
-  background-color: #C4C4C4 !important;
-}
 .page-enter,
 .page-leave-active {
   opacity: 0.5;
@@ -85,9 +98,9 @@ export default {
   font-family: $baseFont;
   font-size: 60%;
 
-  color: $red;
+  color: #5d4e01;
   a {
-    color: $red;
+    color: #5d4e01;
   }
   padding: 0;
   article{

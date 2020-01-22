@@ -100,16 +100,12 @@ export default {
   display: block;
   width: auto;
 }
-.auto-margin{
-  background-color: #C4C4C4 !important;
-}
+
 .img-fluid {
   width: 100%;
   height: auto;
 }
-.header-title{
 
-}
 .graphic {
   max-width: 32rem;
   margin: 0 auto;
