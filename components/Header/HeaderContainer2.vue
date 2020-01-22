@@ -92,7 +92,7 @@ export default {
 }
 
 .sub-container{
-  background-color: #FFDF38;
+  background-color: $yellow;
   padding-top: 2.3rem;
 
 }
@@ -124,7 +124,7 @@ export default {
 .bg-container{
   z-index: 0;
   width: 100%;
-  background-color: #FFDF38;
+  background-color: $yellow;
 }
 .bg-srcimg{
   opacity: 0.5;

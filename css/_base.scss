@@ -54,7 +54,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  background-color: $green;
+  background-color: $yellow;
 }
 
 html {
@@ -184,4 +184,25 @@ code {
 
 .hug {
   margin-top: 0;
+}
+
+.plyr--full-ui input[type=range] {
+  // -webkit-appearance: none;
+  // background: 0 0;
+  // border: 0;
+  // border-radius: 26px;
+  color: $yellow;
+  // display: block;
+  // height: 19px;
+  // margin: 0;
+  // padding: 0;
+  // transition: box-shadow .3s ease;
+  // width: 100%;
+}
+
+.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio{
+  background: $yellow;
+}
+.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
+  background: $yellow;
 }

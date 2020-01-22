@@ -1,20 +1,28 @@
 <template>
   <div>
     <NuxtLink to="/">
-      <HeaderContainer head-type="subpage" :article-data="articleData" />
+      <HeaderContainer
+        head-type="subpage"
+        :article-data="articleData"
+      />
     </NuxtLink>
     <div>
       <h2 class="breadcrumb">
-        <article>
-          Home ->
-          {{ theme.title }}
+        <article class="a-cleaned">
+          <NuxtLink to="/">
+            Home ->
+            {{ theme.title }}
+          </NuxtLink>
         </article>
       </h2>
       <CustomFormat :topic="topic" />
       <article>
         <NuxtLink to="/">
           <div class="">
-            <img class="ico-fluid" src="icon/bridge.svg">
+            <img
+              class="ico-fluid"
+              src="icon/bridge.svg"
+            >
           </div>
           <div class="return-container">
             Go Back to Series
@@ -87,20 +95,23 @@ export default {
 @import "~@/css/base";
 @import "~@/css/mixins";
 
-.page-enter-active,
-.page-leave-active {
+.page-enter-active {
   transition: opacity 0.4s, transform 0.4s;
   transform-style: preserve-3d;
   backface-visibility: hidden;
   opacity: 1;
 }
 
-.page-enter,
+.page-enter {
+  opacity: 0.5;
+  transform: translateX(-100%);
+}
+
 .page-leave-active {
   opacity: 0.5;
   transform: translateX(+100%);
 }
-.bcrumb-origin{
+.bcrumb-origin {
   color: $black;
 }
 .breadcrumb {
@@ -112,16 +123,19 @@ export default {
     color: #5d4e01;
   }
   padding: 0;
-  article{
+  article {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
-.return-container{
-  color: $red
+.return-container {
+  color: $red;
 }
 .ico-fluid {
   max-height: 122px;
   max-width: 130px;
+}
+.a-cleaned > a {
+  border-bottom: none !important;
 }
 </style>
