@@ -55,20 +55,19 @@ export default {
     return {
       title: this.articleData.title,
       meta: [
-        { hid: 'description', name: 'description', content: 'POST_DESC' },
+        { hid: 'description', name: 'description', content: this.articleData.SEO },
         { hid: 'og:title', property: 'og:title', content: this.articleData.title },
         { hid: 'og:site_name', property: 'og:site_name', content: this.articleData.title },
-        { hid: 'og:type', property: 'og:type', content: 'website' },
-        { hid: 'og:url', property: 'og:url', content: 'THIS_URL' },
-        { hid: 'og:image', property: 'og:image', content: 'FEATURE_IMAGE_LINK' },
-        { hid: 'og:description', property: 'og:description', content: 'POST_DESC' },
-        { hid: 'og:image:alt', property: 'og:image:alt', content: 'FEATURE_IMAGE_DESC' },
+        { hid: 'og:url', property: 'og:url', content: this.$route.fullPath },
+        { hid: 'og:image', property: 'og:image', content: this.articleData.SEOImage },
+        { hid: 'og:description', property: 'og:description', content: this.articleData.SEO },
+        { hid: 'og:image:alt', property: 'og:image:alt', content: this.articleData.SEOImageDesc },
         { hid: 'twitter:title', name: 'twitter:title', content: this.articleData.title },
-        { hid: 'twitter:description', name: 'twitter:description', content: 'POST_DESC' },
-        { hid: 'twitter:image', name: 'twitter:image', content: 'FEATURE_IMAGE_LINK' },
-        { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'FEATURE_IMAGE_DESC' },
-        { hid: 'itemprop:description', itemprop: 'description', content: 'POST_DESC' },
-        { hid: 'itemprop:image', itemprop: 'image', content: 'FEATURE_IMAGE_LINK' }
+        { hid: 'twitter:description', name: 'twitter:description', content: this.articleData.SEO },
+        { hid: 'twitter:image', name: 'twitter:image', content: this.articleData.SEOImage },
+        { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: this.articleData.SEOImageDesc },
+        { hid: 'itemprop:description', itemprop: 'description', content: this.articleData.SEO },
+        { hid: 'itemprop:image', itemprop: 'image', content: this.articleData.SEOImage }
       ]
     }
   }
