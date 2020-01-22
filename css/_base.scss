@@ -27,24 +27,33 @@ html {
   color: $baseFontColor;
 }
 
-h3 {
-  font-weight: 100;
+h1 {
   font-family: $baseFontHeaders;
+
+}
+
+h2 {
+  font-family: $baseFontHeaders;
+}
+
+h3 {
+  font-family: $baseFontHeaders;
+  font-weight: 100;
   letter-spacing: 1.84px;
   // text-transform: uppercase;
   // color: $black;
 }
 
 h4 {
-  font-weight: 300;
+  font-weight: 100;
   font-family: $baseFontHeaders;
   // text-transform: uppercase;
   letter-spacing: 2px;
 }
 h5 {
-  font-weight: 300;
+  font-weight: 100;
   font-family: $baseFontHeaders;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   letter-spacing: 1px;
 }
 a {
@@ -130,7 +139,6 @@ h4,
 h5,
 h6 {
   /* Change heading typefaces here */
-  font-family: $baseFontHeaders;
   padding-top: $leading;
   padding-bottom: $leading;
 
