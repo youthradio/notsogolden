@@ -1,7 +1,8 @@
 <template>
   <div>
-    <HeaderContainer head-type="subpage" :article-data="articleData" />
-
+    <NuxtLink to="/">
+      <HeaderContainer head-type="subpage" :article-data="articleData" />
+    </NuxtLink>
     <div>
       <h2 class="breadcrumb">
         <article>
@@ -11,10 +12,10 @@
       </h2>
       <CustomFormat :topic="topic" />
       <article>
-        <div class="">
-          <img class="ico-fluid" src="icon/bridge.svg">
-        </div>
         <NuxtLink to="/">
+          <div class="">
+            <img class="ico-fluid" src="icon/bridge.svg">
+          </div>
           <div class="return-container">
             Go Back to Series
           </div>
