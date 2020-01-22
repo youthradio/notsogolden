@@ -16,7 +16,7 @@
         </div>
         <NuxtLink to="/">
           <div class="return-container">
-            Go Back to Collection
+            Go Back to Series
           </div>
         </NuxtLink>
       </article>
