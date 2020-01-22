@@ -1,14 +1,16 @@
 <template>
   <div>
-    <HeaderContainer :article-data="articleData" />
+    <HeaderContainer head-type="subpage" :article-data="articleData" />
 
     <div class="player">
       <h2 class="breadcrumb">
-        <NuxtLink to="/">
-          Home
-        </NuxtLink>
-        ->
-        {{ theme.title }}
+        <article>
+          <NuxtLink to="/">
+            Home
+          </NuxtLink>
+          ->
+          {{ theme.title }}
+        </article>
       </h2>
       <CustomFormat :topic="topic" />
     </div>
@@ -87,6 +89,10 @@ export default {
   a {
     color: $red;
   }
-  padding: 0.2rem 6rem 0rem 6rem;
+  padding: 0;
+  article{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 </style>

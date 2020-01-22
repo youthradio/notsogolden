@@ -1,10 +1,20 @@
 <template>
   <header class="article-header">
-    <div class="top-container title">
-      <h1> {{ articleData.title }} </h1>
-      <h3> {{ articleData.subtitle }} </h3>
+    <div :class="[headType === 'main' ? 'top-container title' : 'sub-container sub-title' ]">
+      <article v-if="headType === 'main'">
+        <h1> {{ articleData.title }} </h1>
+        <h3> {{ articleData.subtitle }} </h3>
+      </article>
+      <article v-if="headType === 'subpage'">
+        <h2>
+          {{ articleData.title }}
+        </h2>
+        <h5>
+          {{ articleData.subtitle }}
+        </h5>
+      </article>
     </div>
-    <div class="bg-container">
+    <div v-if="headType === 'main'" :class="[headType === 'main' ? 'bg-container' : '' ]">
       <img
         :data-srcset="`${headerImg}x300.jpg 375w,
         ${headerImg}x750.jpg 563w,
@@ -33,6 +43,11 @@ export default {
       required: false,
       type: Object,
       default: null
+    },
+    headType: {
+      required: false,
+      type: String,
+      default: 'main'
     }
   },
   data () {
@@ -62,6 +77,12 @@ export default {
   font-size: 3rem;
 }
 
+.sub-title{
+  h2,h5{
+    padding: 0
+    }
+}
+
 .article-header{
   margin: 0 0 0 -0.2rem;
   display: flex;
@@ -70,7 +91,14 @@ export default {
 
 }
 
+.sub-container{
+  background-color: #FFDF38;
+  padding-top: 2.3rem;
+
+}
+
 .top-container{
+
   width: 100%;
   position: absolute;
   display: flex;
