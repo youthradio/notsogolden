@@ -55,19 +55,17 @@
           {{ topic.byline }}
         </h4>
       </article>
+      <article>
+        <vue-plyr>
+          <audio>
+            <source
+              :src="topic.link"
+              type="audio/mp3"
+            >
+          </audio>
+        </vue-plyr>
+      </article>
       <article v-html="topic.text" />
-      <vue-plyr>
-        <audio>
-          <source
-            :src="topic.link"
-            type="audio/mp3"
-          >
-        </audio>
-      </vue-plyr>
-      <img
-        :src="topic.featureImage"
-        class="img-fluid"
-      >
     </template>
   </div>
 </template>
