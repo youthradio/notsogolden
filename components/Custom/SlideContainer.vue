@@ -1,7 +1,7 @@
 <template>
   <div class="temp-container">
     <div class="img-container">
-      <h2 class="theme-title">
+      <h2 :style="titleColor" class="theme-title">
         {{ slideContent.title }}
       </h2>
       <img
@@ -65,6 +65,14 @@ export default {
       if (this.slideContent) {
         return {
           'border-top-color': this.slideContent.color
+        }
+      }
+      return ''
+    },
+    titleColor () {
+      if (this.slideContent) {
+        return {
+          color: this.slideContent.color
         }
       }
       return ''
