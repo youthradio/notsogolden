@@ -4,15 +4,15 @@
       v-if="topic.format === 'graphic'"
       class="template-container"
     >
+      <article v-html="topic.text" />
+    </template>
+    <template
+      v-else-if="topic.format === 'text'"
+      class="template-container"
+    >
       <article>
         <h1 class="header-title">
           {{ topic.title }}
-          </h2>
-          <h4
-            v-if="topic.byline"
-            class="by-line"
-          />
-          </h4>
         </h1>
         <h4
           v-if="topic.byline"
@@ -24,38 +24,19 @@
       <article v-html="topic.text" />
     </template>
     <template
-      v-else-if="topic.format === 'text'"
-      class="template-container"
-    >
-      <article>
-        <h1 class="header-title">
-          {{ topic.title }}
-          </h2>
-          <h4
-            v-if="topic.byline"
-            class="by-line"
-          >
-            {{ topic.byline }}
-          </h4>
-        </h1>
-      </article>
-      <article v-html="topic.text" />
-    </template>
-    <template
       v-else-if="topic.format === 'video'"
       class="template-container"
     >
       <article>
         <h1 class="header-title">
           {{ topic.title }}
-          </h2>
-          <h4
-            v-if="topic.byline"
-            class="by-line"
-          >
-            {{ topic.byline }}
-          </h4>
         </h1>
+        <h4
+          v-if="topic.byline"
+          class="by-line"
+        >
+          {{ topic.byline }}
+        </h4>
       </article>
       <article v-html="topic.text" />
       <vue-plyr>
@@ -76,14 +57,13 @@
       <article>
         <h1 class="header-title">
           {{ topic.title }}
-          </h2>
-          <h4
-            v-if="topic.byline"
-            class="by-line"
-          >
-            {{ topic.byline }}
-          </h4>
         </h1>
+        <h4
+          v-if="topic.byline"
+          class="by-line"
+        >
+          {{ topic.byline }}
+        </h4>
       </article>
       <article>
         <vue-plyr>
