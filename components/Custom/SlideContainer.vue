@@ -76,15 +76,6 @@ export default {
         }
       }
       return ''
-    },
-    borderColorLink () {
-      if (this.slideContent) {
-        return {
-          // 'border-bottom-color': this.slideContent.color
-          // needs a hover rule too, not sure how to do it through here
-        }
-      }
-      return ''
     }
   },
   watch: {
@@ -112,6 +103,10 @@ export default {
 .ico-fluid {
   max-height: 50px;
   max-width: 50px;
+}
+
+.theme-title{
+  padding-bottom: 3px;
 }
 
 .temp-container{
