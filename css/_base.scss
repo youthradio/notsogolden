@@ -45,12 +45,13 @@ h5 {
 }
 a {
   color: $baseFontColor;
-  border-bottom: 2px solid rgba($green, 0.3);
+  border-bottom: 2px solid #FFC146;
+  //border-bottom: 2px solid rgba($green, 0.3);
   vertical-align: baseline;
   text-decoration: none;
 }
 a:hover {
-  background-color: $yellow;
+  background-color: #FFC146;
 }
 
 html {
