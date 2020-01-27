@@ -71,13 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/css/vars";
-@import "~@/css/base";
-@import "~@/css/mixins";
 
-.container {
-  padding: 0 0 0 0.2rem;
-  width: 100%;
-}
 .title {
   font-family: $baseFont;
   font-size: 3rem;
@@ -97,9 +91,8 @@ export default {
 .credits {
   margin-top: 2rem;
   font-size: 0.8rem;
-  h2{
-  border-bottom: 8px $yellow solid;
-  width: 6.3rem;
+  h2 {
+    border-bottom: 8px $black solid;
   }
   h4 {
     font-weight: bold;

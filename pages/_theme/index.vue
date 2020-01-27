@@ -48,7 +48,6 @@ export default {
 .player {
   text-align: center;
   margin-top: 100px;
-  font-family: sans-serif;
 }
 .page-enter-active,
 .page-leave-active {

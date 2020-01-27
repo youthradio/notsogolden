@@ -8,5 +8,6 @@
 // @import '~@/css/fonts';
 @import '~@/css/vars';
 @import '~@/css/base';
+@import "~@/css/mixins";
 
 </style>

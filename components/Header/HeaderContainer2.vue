@@ -1,20 +1,9 @@
 <template>
   <header class="article-header">
-    <div :class="[headType === 'main' ? 'top-container title' : 'sub-container sub-title' ]">
-      <article v-if="headType === 'main'">
-        <h1> {{ articleData.title }} </h1>
-        <h3> {{ articleData.subtitle }} </h3>
-      </article>
-      <article v-if="headType === 'subpage'">
-        <h2>
-          {{ articleData.title }}
-        </h2>
-        <h3>
-          {{ articleData.subtitle }}
-        </h3>
-      </article>
-    </div>
-    <div v-if="headType === 'main'" :class="[headType === 'main' ? 'bg-container' : '' ]">
+    <div
+      v-if="headType === 'main'"
+      :class="[headType === 'main' ? 'bg-container' : '' ]"
+    >
       <img
         :data-srcset="`${headerImg}x300.jpg 375w,
         ${headerImg}x750.jpg 563w,
@@ -24,9 +13,25 @@
         `"
         :data-src="`${headerImg}x1500.jpg`"
         alt="The golden gate bridge"
-
-        class="img-fluid lazyload bg-srcimg"
+        class="img-fluid lazyload"
       >
+    </div>
+    <div :class="[headType === 'main' ? 'top-container title' : 'sub-container sub-title' ]">
+      <div v-if="headType === 'main'">
+        <h1> {{ articleData.title }} </h1>
+        <h3> {{ articleData.subtitle }} </h3>
+      </div>
+      <div
+        v-if="headType === 'subpage'"
+        class="headline-margins"
+      >
+        <h2>
+          {{ articleData.title }}
+        </h2>
+        <h3>
+          {{ articleData.subtitle }}
+        </h3>
+      </div>
     </div>
   </header>
 </template>
@@ -69,61 +74,55 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/css/vars";
-@import "~@/css/base";
-@import "~@/css/mixins";
 
-.sub-title, .title{
-  h1,h2,p{
+.sub-title,
+.title {
+  h1,
+  h2,
+  p {
     padding: 0;
-    }
+  }
 }
 
-.article-header{
-  margin: 0 0 0 -0.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
+.article-header {
+  // margin: 0 0 0 -0.2rem;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-end;
 }
 
-.sub-container{
-  background-color: #FFC146;
-  padding-top: 2.3rem;
-
+.sub-container {
+  background-color: $yellow;
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  // padding-bottom: 0.5rem;
+  // padding-bottom: 0.5rem;
 }
-
-.top-container{
-
+.headline-margins {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.top-container {
   width: 100%;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  justify-content: center;
+  // position: absolute;
   text-align: center;
   z-index: 1;
-  h1 {
-    }
-  @include breakpoint(small){
-    h1 {
-    }
-  }
-  h3 {
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-  }
+  padding: 0.5rem;
+  background-color: rgba($yellow, 1);
 }
 
-.bg-container{
+.bg-container {
   z-index: 0;
   width: 100%;
   background-color: $yellow;
 }
-.bg-srcimg{
+.img-fluid {
   opacity: 0.5;
-  width: 100%;
-  max-width: 100%;
-  object-fit: contain;
+  max-height: 800px;
+  object-fit: cover;
   vertical-align: top;
 }
 </style>

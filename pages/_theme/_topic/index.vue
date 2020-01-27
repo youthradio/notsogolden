@@ -92,8 +92,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/css/vars";
-@import "~@/css/base";
-@import "~@/css/mixins";
 
 .page-enter-active {
   transition: opacity 0.4s, transform 0.4s;

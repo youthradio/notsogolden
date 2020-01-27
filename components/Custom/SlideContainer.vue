@@ -92,8 +92,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/css/vars";
-@import "~@/css/base";
 @import "~@/css/mixins";
+
 .img-fluid {
   width: 100%;
   height: auto;
