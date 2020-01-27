@@ -97,6 +97,10 @@ export default {
 .credits {
   margin-top: 2rem;
   font-size: 0.8rem;
+  h2{
+  border-bottom: 8px $yellow solid;
+  width: 6.3rem;
+  }
   h4 {
     font-weight: bold;
     font-size: 0.8rem;
