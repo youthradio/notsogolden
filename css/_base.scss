@@ -207,9 +207,14 @@ code {
   // width: 100%;
 }
 
-.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio{
-  background: $yellow;
-}
-.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
+.plyr--audio .plyr__control.plyr__tab-focus,
+.plyr--audio,
+.plyr--video,
+.plyr--audio .plyr__control:hover,
+.plyr--audio .plyr__control[aria-expanded=true],
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded=true],
+.plyr__control--overlaid 
+{
   background: $yellow;
 }
