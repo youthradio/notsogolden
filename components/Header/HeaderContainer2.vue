@@ -87,7 +87,7 @@ export default {
 }
 
 .sub-container{
-  background-color: $yellow;
+  background-color: #FFC146;
   padding-top: 2.3rem;
 
 }

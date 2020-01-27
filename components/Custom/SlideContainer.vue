@@ -1,7 +1,7 @@
 <template>
   <div class="temp-container">
     <div class="img-container">
-      <h2 class="theme-title">
+      <h2 :style="titleColor" class="theme-title">
         {{ slideContent.title }}
       </h2>
       <img
@@ -69,11 +69,10 @@ export default {
       }
       return ''
     },
-    borderColorLink () {
+    titleColor () {
       if (this.slideContent) {
         return {
-          // 'border-bottom-color': this.slideContent.color
-          // needs a hover rule too, not sure how to do it through here
+          color: this.slideContent.color
         }
       }
       return ''
@@ -104,6 +103,10 @@ export default {
 .ico-fluid {
   max-height: 50px;
   max-width: 50px;
+}
+
+.theme-title{
+  padding-bottom: 3px;
 }
 
 .temp-container{
