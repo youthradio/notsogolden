@@ -24,7 +24,7 @@
           :key="credit.title"
         >
           <h3 v-if="ind === 8">
-            Project Team
+            Statewide Production
           </h3>
           <h4>{{ credit.title }}</h4>
           <ul>
@@ -121,6 +121,7 @@ export default {
   }
   h3 {
     margin-top: 1rem;
+    font-size: 1rem;
   }
   h4 {
     font-weight: bold;
