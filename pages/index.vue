@@ -15,10 +15,14 @@
       />
       <div class="credits">
         <h2>Credits</h2>
+        <p> {{ articleData.credits.title }}</p>
         <div
-          v-for="credit in articleData.credits"
-          :key="credit"
+          v-for="(credit, ind) in articleData.credits.list"
+          :key="credit.title"
         >
+          <h3 v-if="ind === 8">
+            Project Team
+          </h3>
           <h4>{{ credit.title }}</h4>
           <ul>
             <li
@@ -93,6 +97,9 @@ export default {
   font-size: 0.8rem;
   h2 {
     border-bottom: 8px $black solid;
+  }
+  h3 {
+    margin-top: 1rem;
   }
   h4 {
     font-weight: bold;

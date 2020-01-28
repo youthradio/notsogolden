@@ -83,20 +83,14 @@ export default {
     padding: 0;
   }
 }
-
 .article-header {
-  // margin: 0 0 0 -0.2rem;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-end;
+  position: relative;
 }
 
 .sub-container {
   background-color: $yellow;
   padding-top: 2.5rem;
   padding-bottom: 0.5rem;
-  // padding-bottom: 0.5rem;
-  // padding-bottom: 0.5rem;
 }
 .headline-margins {
   max-width: 40rem;
@@ -107,11 +101,11 @@ export default {
 }
 .top-container {
   width: 100%;
-  // position: absolute;
   text-align: center;
   z-index: 1;
   padding: 0.5rem;
-  background-color: rgba($yellow, 1);
+  position: absolute;
+  bottom: 0px;
 }
 
 .bg-container {
