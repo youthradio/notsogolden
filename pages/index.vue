@@ -10,7 +10,6 @@
         v-for="theme in articleData.themes"
         :key="theme.title"
         :slide-content="theme"
-        class="slide-container"
         @onTopicChange="onTopicChange"
       />
       <div class="credits">

@@ -1,7 +1,10 @@
 <template>
   <div class="temp-container">
     <div class="img-container">
-      <h2 :style="titleColor" class="theme-title">
+      <h2
+        :style="titleColor"
+        class="theme-title"
+      >
         {{ slideContent.title }}
       </h2>
       <img
@@ -17,10 +20,6 @@
         class="grid-topic"
       >
         <NuxtLink :to="slideContent.slug + '/' + topic.slug">
-          <!-- <a
-          href=""
-          @click.prevent="selectTopic(topic)"
-        > -->
           <p
             :style="borderColor"
             class="slide-content"
@@ -105,15 +104,16 @@ export default {
   max-width: 50px;
 }
 
-.theme-title{
+.theme-title {
   padding-bottom: 3px;
 }
 
-.temp-container{
+.temp-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  margin-top: 1rem;
 }
 
 .grid-container {
