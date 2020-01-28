@@ -1,7 +1,11 @@
 <template>
   <div class="container">
-    <HeaderContainer :article-data="articleData" />
+    <HeaderContainer
+      v-if="!isIFrame"
+      :article-data="articleData"
+    />
     <article
+      v-if="!isIFrame"
       class="b-copy"
       v-html="articleData.text "
     />
@@ -38,6 +42,7 @@
 </template>
 
 <script>
+import ResizeObserver from 'resize-observer-polyfill'
 import SlideContainer from '../components/Custom/SlideContainer'
 import HeaderContainer from '../components/Header/HeaderContainer2'
 
@@ -56,9 +61,26 @@ export default {
       activeTopic: null
     }
   },
-  computed: {},
-  watch: {
-
+  computed: {
+    isIFrame () {
+      if (this.$route.query.i) {
+        return this.$route.query.i === '1'
+      }
+      return false
+    }
+  },
+  mounted () {
+    const elementRoot = this.$root.$el
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const {
+          height
+        } = entry.contentRect
+        const elementHeight = 'elementHeight:' + height
+        parent.postMessage(elementHeight, '*')
+      }
+    })
+    resizeObserver.observe(elementRoot)
   },
   methods: {
     closeOverlay () {
