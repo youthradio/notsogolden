@@ -15,7 +15,7 @@
       />
       <div class="credits">
         <h2>Credits</h2>
-        <p> {{ articleData.credits.title }}</p>
+        <p v-html="articleData.credits.title " />
         <div
           v-for="(credit, ind) in articleData.credits.list"
           :key="credit.title"
@@ -27,10 +27,10 @@
           <ul>
             <li
               v-for="names in credit.list"
-              :key="names"
-            >
-              {{ names }}
-            </li>
+              :key="names.text"
+              class="credits-item"
+              v-html="names.text"
+            />
           </ul>
         </div>
       </div>
@@ -111,5 +111,10 @@ export default {
     padding-left: 0.5rem;
     list-style: none;
   }
+}
+.credits-item /deep/ p {
+  line-height: 1rem;
+  margin-top: 0;
+  margin-bottom: 0em;
 }
 </style>

@@ -11,5 +11,6 @@ export default {
   featureImageDescription: 'Golden Gate Illustration ',
   featureImageCaption: '(Photo: Andersen Ross Photography Inc/Getty Images)',
   // you might not need to change
-  twitterHandler: '@youthmediaBHC'
+  twitterHandler: '@youthmediaBHC',
+  canonicalURL: 'https://notsogolden.org/'
 }
