@@ -89,6 +89,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/sitemap',
     '~/modules/getdata',
     '@nuxtjs/google-gtag'
   ],
@@ -123,6 +124,9 @@ export default {
       .themes.map(theme =>
         theme.topics.map(topic =>
           `/${theme.slug}/${topic.slug}`)))
+  },
+  sitemap: {
+    hostname: 'https://notsogolden.org/'
   }
   // server: {
   //   https: {
