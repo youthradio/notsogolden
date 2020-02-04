@@ -62,6 +62,11 @@ export default {
   //   return !isNa(+params.theme)
   // },
   mounted () {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
     window.addEventListener('keydown', (e) => {
       if (e.keyCode === 27 || e.keyCode === 32) {
         this.$router.back()
